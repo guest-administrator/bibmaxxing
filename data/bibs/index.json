@@ -1,0 +1,61 @@
+{
+  "tracks": [
+    { "id": "cwt-e5",   "label": "CWT E-5",  "rating": "CWT", "paygrade": "E-5",  "examType": "regular", "scope": "exam-readiness", "note": "Core-derived v1. Enter profile-sheet item counts for real weighting." },
+    { "id": "cwt-e6",   "label": "CWT E-6",  "rating": "CWT", "paygrade": "E-6",  "examType": "regular", "scope": "exam-readiness", "note": "Core-derived v1 using the operator-supplied E-6 section-count example until a profile sheet is entered." },
+    { "id": "cwt-e7",   "label": "CWT E-7",  "rating": "CWT", "paygrade": "E-7",  "examType": "regular", "scope": "exam-readiness" },
+    { "id": "cwt-core", "label": "CWT Core", "rating": "CWT", "paygrade": "core", "examType": "core",    "scope": "reference-only", "note": "Persistent CWT reference material. Excluded from exam readiness; only mastery/coverage is tracked." }
+  ],
+  "bibs": [
+    {
+      "id": "CWT-E5",
+      "track": "cwt-e5",
+      "rating": "CWT",
+      "paygrade": "E-5",
+      "cycle": "Profile sheet required / Core-derived v1",
+      "examType": "regular",
+      "scope": "exam-readiness-provisional",
+      "path": "data/bibs/CWT-E5/",
+      "contentBaseBib": "CWT-E7",
+      "contentBasePath": "data/bibs/CWT-E7/",
+      "coreBaseBib": "CWT-CORE",
+      "note": "Public-safe Core-derived CWT E-5 track. No official E-5 section counts are bundled; use Manage > Profile sheet for real weights."
+    },
+    {
+      "id": "CWT-E6",
+      "track": "cwt-e6",
+      "rating": "CWT",
+      "paygrade": "E-6",
+      "cycle": "Operator E-6 section example / Core-derived v1",
+      "examType": "regular",
+      "scope": "exam-readiness-provisional",
+      "path": "data/bibs/CWT-E6/",
+      "contentBaseBib": "CWT-E7",
+      "contentBasePath": "data/bibs/CWT-E7/",
+      "coreBaseBib": "CWT-CORE",
+      "note": "Public-safe Core-derived CWT E-6 track using the operator-supplied section-count example until a profile sheet is entered."
+    },
+    {
+      "id": "CWT-E7",
+      "track": "cwt-e7",
+      "rating": "CWT",
+      "paygrade": "E-7",
+      "cycle": "Cycle 270 / January 2026",
+      "examType": "regular",
+      "path": "data/bibs/CWT-E7/",
+      "default": true
+    },
+    {
+      "id": "CWT-CORE",
+      "track": "cwt-core",
+      "rating": "CWT",
+      "paygrade": "core",
+      "cycle": "Continuous core bank",
+      "examType": "core",
+      "scope": "reference-only",
+      "path": "data/bibs/CWT-CORE/",
+      "contentBaseBib": "CWT-E7",
+      "contentBasePath": "data/bibs/CWT-E7/",
+      "note": "Public-safe reusable CWT objective/question bank extracted from CWT-E7. Does not contribute to advancement-exam weighted readiness."
+    }
+  ]
+}

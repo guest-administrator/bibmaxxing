@@ -1,0 +1,22 @@
+# Local/runtime output
+dist/
+node_modules/
+*.log
+
+# Operator-local reference material. Do not commit commercial/restricted PDFs.
+*.pdf
+*.epub
+*.mobi
+*.azw3
+data/bibs/**/references/*
+!data/bibs/**/references/MANIFEST.json
+
+# Local agent/session folders
+.claude/
+.codex/
+.superpowers/
+_screenshots/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db

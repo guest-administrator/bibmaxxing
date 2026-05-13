@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Bibmaxxing &mdash; Navy Advancement Study</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<a class="skip-link" href="#view">Skip to main content</a>
+
+<header id="topnav" class="topnav" role="banner">
+  <div class="topnav-row topnav-row-primary">
+    <div class="brand" aria-label="Bibmaxxing">BIBMAXXING</div>
+
+    <button id="bibSelector" class="bib-selector" type="button"
+            aria-haspopup="listbox" aria-expanded="false"
+            aria-controls="bibDropdown" aria-label="Switch active Bib">
+      <span id="bibSelectorLabel">No Bib</span>
+      <span class="caret" aria-hidden="true">v</span>
+    </button>
+    <ul id="bibDropdown" class="bib-dropdown" role="listbox" aria-label="Installed Bibs" hidden></ul>
+
+    <div class="topnav-right">
+      <span id="savedIndicator" class="saved" aria-live="polite" aria-atomic="true" title="Local auto-save status">Ready</span>
+      <button id="navToggle" class="nav-toggle" type="button"
+              aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+      <button id="themeToggle" class="theme-toggle" type="button"
+              title="Toggle theme" aria-label="Toggle theme">
+        <span id="themeToggleIcon" aria-hidden="true">L</span>
+        <span class="visually-hidden">Theme</span>
+      </button>
+      <button id="exitAppBtn" class="theme-toggle exit-app-btn" type="button"
+              title="Exit Bibmaxxing" aria-label="Exit Bibmaxxing" hidden>
+        Exit
+      </button>
+    </div>
+  </div>
+
+  <nav id="mainNav" class="mainnav" aria-label="Primary">
+    <a href="#dashboard"  data-nav="dashboard"  data-group="today">Today</a>
+    <a href="#flashcards" data-nav="flashcards" data-group="drill">Drill</a>
+    <a href="#quiz"       data-nav="quiz"       data-group="quiz">Quiz</a>
+    <a href="#exam"       data-nav="exam"       data-group="exam">Exam</a>
+    <a href="#guide"      data-nav="guide"      data-group="library">Library</a>
+    <a href="#references" data-nav="references" data-group="references">References</a>
+    <a href="#settings"   data-nav="settings"   data-group="manage">Manage</a>
+  </nav>
+</header>
+
+<main id="view" class="view" aria-live="polite" tabindex="-1">
+  <div class="loading" role="status">Loading...</div>
+</main>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "name": "bibmaxxing",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local-first Navy enlisted advancement Bib study trainer (web app).",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "serve": "node scripts/serve.mjs",
+    "build:core": "node scripts/build-core-bib.mjs",
+    "build:tracks": "node scripts/build-cwt-tracks.mjs",
+    "build:all": "npm run build:core && npm run build:tracks",
+    "audit:data": "node scripts/audit-data.mjs",
+    "audit:data:strict": "node scripts/audit-data.mjs --strict",
+    "deploy": "node scripts/deploy.mjs",
+    "github:folder": "node scripts/build-github-upload.mjs",
+    "test:core": "node scripts/test-core-track.mjs",
+    "test:tracks": "node scripts/test-cwt-track-buildout.mjs",
+    "test:ui": "node scripts/test-ui-polish-contract.mjs",
+    "test:coverage": "node scripts/test-ref-question-coverage.mjs",
+    "test:deploy": "node scripts/test-deploy-contract.mjs",
+    "test:github-upload": "node scripts/test-github-upload-contract.mjs",
+    "test:srs": "node scripts/test-srs.mjs",
+    "test:syntax": "node scripts/test-syntax.mjs",
+    "test": "npm run test:syntax && npm run test:srs && npm run test:core && npm run test:tracks && npm run test:ui && npm run test:coverage && npm run test:deploy && npm run test:github-upload && npm run audit:data",
+    "package:web": "node scripts/package-web.mjs",
+    "package:web:all": "node scripts/package-web.mjs --type all",
+    "clean": "node scripts/clean-dist.mjs"
+  },
+  "keywords": [
+    "navy",
+    "advancement",
+    "study",
+    "flashcards",
+    "spaced-repetition",
+    "local-first"
+  ]
+}

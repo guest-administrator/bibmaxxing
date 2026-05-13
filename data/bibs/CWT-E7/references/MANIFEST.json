@@ -1,0 +1,38 @@
+{
+  "bibId": "CWT-E7",
+  "cycle": "Cycle 270 / January 2026",
+  "generatedAt": "2026-04-21",
+  "updatedAt": "2026-05-13",
+  "sourceBibPage": "https://www.cool.osd.mil/usn/bibs/Jan2026%20E7Bibs.htm",
+  "sourceBibFile": "bib-source.pdf",
+  "summary": {
+    "total": 71,
+    "publicDownloaded": 43,
+    "publicOnline": 1,
+    "publicMissing": 0,
+    "needsUser": 10,
+    "cuiFouo": 12,
+    "classified": 5,
+    "corrupted": 4
+  },
+  "summaryNote": "Reconciled 2026-05-13 against bib.json reality. publicDownloaded = 22 commercial books + 21 doctrine PDFs on disk (the 8 JPs, 4 CJCSI/CJCSM, 2 SECNAVINST, DODM-5105.21-V1, DJSIG, USSID-18, plus AFDP-3-12 / NATO-AJP-3.20 / Army-WC-SCOG / NWP-3-13 mirrors). publicOnline = NWP-5-01 (May 2021 / Erratum-1 Apr 2025) released publicly by US Naval War College. publicMissing was previously a duplicate of stillToAcquire; that list is now the single source of truth for publicly-available references that need acquisition. needsUser = 10 JCAC student guides (distributed through the JCAC training pipeline; no public mirror). cuiFouo = 12 Navy / Cyber CUI/FOUO publications (NTTPs, NWP-3-12, CFCOE, CPT-ORG, USCC, USCYBERCOM, NCDOC, Deployable Security Trainer, OPTASK, DCO CTF, FDCD). classified = USSID-104, USSID-109, USSID-201, USSID-6000, and CRITIC Handbook. corrupted = 4 on-disk EPUB exports that need re-source (BOOK-HACKER-TECH partial, BOOK-ASM-PROG, BOOK-REVERSE-ENG, BOOK-PRACTICAL-MEM) — for the three full corruptions, content study guides have been authored against public alternatives (Intel SDM / OST2 / Agner Fog; MalwareUnicorn / Ghidra / RE for Beginners; Volatility Foundation / LiME / AVML).",
+  "corruptedExports": [
+    {"id": "BOOK-HACKER-TECH",   "file": "Hacker Techniques, Tools, and Incident Handling, 2nd Edition-9781284031713.epub", "reason": "XML tag mismatch in EPUB (FzErrorSyntax)", "remediation": "PDF copy on disk still readable; primary file usable."},
+    {"id": "BOOK-ASM-PROG",      "file": "Mastering Assembly Programming-9781787287488.epub",                              "reason": "0 pages — empty spine, OPF is 0 bytes, chapters are O'Reilly CDN Access Denied pages", "remediation": "Public-alternative study guide BOOK-ASM-PROG.md authored from Intel SDM + OST2 + Agner Fog + RE for Beginners. PDF re-source still recommended for the source book."},
+    {"id": "BOOK-REVERSE-ENG",   "file": "Mastering Reverse Engineering-9781788838849.epub",                               "reason": "0 pages — empty spine", "remediation": "Public-alternative study guide BOOK-REVERSE-ENG.md authored from MalwareUnicorn + Ghidra + Wrongbaud + RE for Beginners. PDF re-source still recommended."},
+    {"id": "BOOK-PRACTICAL-MEM", "file": "Practical Memory Forensics-9781801070331.epub",                                  "reason": "0 pages — empty spine, OPF is 0 bytes", "remediation": "Public-alternative study guide BOOK-PRACTICAL-MEM.md authored from Volatility Foundation + LiME + AVML. PDF re-source still recommended."}
+  ],
+  "stillToAcquire": [
+    { "id": "DODM-5105.21-V3", "title": "DODM 5105.21 Vol 3 (Substitute-exam)", "sourceUrl": "https://www.esd.whs.mil/Directives/issuances/dodm/", "note": "Public, not yet on disk. Not yet a ref in bib.json." },
+    { "id": "EO-12333",        "title": "Executive Order 12333 — US Intelligence Activities (Substitute-exam)", "sourceUrl": "https://www.archives.gov/federal-register/codification/executive-order/12333.html", "note": "Public, fully accessible at archives.gov. Not yet a ref in bib.json. Operator decision — see BIB-SCOPE / curation report." }
+  ],
+  "publicDownloadableChecklist": [],
+  "publicDownloadedDoctrine": [
+    "JP-2-01", "JP-3-0", "JP-3-09", "JP-3-12", "JP-3-13", "JP-3-25", "JP-3-60", "JP-5-0",
+    "CJCSI-3121.01B", "CJCSI-3370.01B", "CJCSI-6510.01F", "CJCSM-6510.01B",
+    "SECNAVINST-5510.30C", "SECNAVINST-5510.36B",
+    "DODM-5105.21-V1", "DJSIG", "USSID-18",
+    "AFDP-3-12", "NATO-AJP-3.20", "Army-WC-SCOG", "NWP-3-13"
+  ],
+  "notesOnRestricted": "Entries marked cuiFouo (NTTPs, NWPs, CFCOE, CPT-ORG, USCC / USCYBERCOM / NCDOC messages, Deployable Security Trainer, OPTASK, DCO CTF, FDCD) and classified (USSID-104, USSID-109, USSID-201, USSID-6000, CRITIC Handbook) are out of scope for content distribution. Each carries a placeholder / open-source-framed study guide so the Sailor recognizes the citation on the Bib and knows to study via official channels — no source text shipped with this app."
+}

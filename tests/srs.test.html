@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<title>SRS (SM-2) tests — Bibmaxxing</title>
+<link rel="stylesheet" href="../app.css">
+<style>
+  body { padding: 24px; font-family: var(--font); }
+  .test { padding: 6px 10px; margin: 4px 0; border-left: 4px solid var(--border); }
+  .pass { background: var(--success-soft); border-color: var(--success); color: var(--success); }
+  .fail { background: var(--danger-soft);  border-color: var(--danger);  color: var(--danger); }
+  h1 { font-family: var(--font); color: var(--text); }
+  .summary { font-size: 1.1em; margin: 12px 0; padding: 8px; border-radius: 4px; }
+  .summary.ok { background: var(--success-soft); color: var(--success); }
+  .summary.ko { background: var(--danger-soft); color: var(--danger); }
+  details { margin: 8px 0; }
+  details pre { background: var(--surface-2); padding: 6px 10px; border-radius: 4px; overflow-x: auto; font-size: 0.85em; }
+</style>
+</head>
+<body>
+
+<h1>SRS (SM-2) unit tests</h1>
+<div id="summary" class="summary">Running…</div>
+<div id="results"></div>
+
+<script type="module">
+import { initCard, review, RATE, daysUntil, DAY_MS } from "../js/srs.js";
+
+const results = document.getElementById("results");
+const summary = document.getElementById("summary");
+
+let passed = 0, failed = 0;
+const failures = [];
+
+function test(name, fn) {
+  try {
+    fn();
+    passed++;
+    const el = document.createElement("div");
+    el.className = "test pass";
+    el.textContent = "PASS  " + name;
+    results.appendChild(el);
+  } catch (err) {
+    failed++;
+    failures.push({ name, err });
+    const el = document.createElement("div");
+    el.className = "test fail";
+    el.textContent = "FAIL  " + name + "  —  " + (err.message || err);
+    results.appendChild(el);
+    const d = document.createElement("details");
+    const s = document.createElement("summary");
+    s.textContent = "stack";
+    d.appendChild(s);
+    const pre = document.createElement("pre");
+    pre.textContent = err.stack || String(err);
+    d.appendChild(pre);
+    results.appendChild(d);
+  }
+}
+
+function assert(cond, msg) {
+  if (!cond) throw new Error(msg || "assertion failed");
+}
+
+function assertEqual(actual, expected, msg) {
+  if (actual !== expected) {
+    throw new Error(`${msg || "expected equal"}  —  actual=${JSON.stringify(actual)} expected=${JSON.stringify(expected)}`);
+  }
+}
+
+function assertClose(actual, expected, epsilon, msg) {
+  if (Math.abs(actual - expected) > epsilon) {
+    throw new Error(`${msg || "expected close"}  —  actual=${actual} expected=${expected} ±${epsilon}`);
+  }
+}
+
+/* ========== Init ========== */
+
+test("initCard: fresh card has SM-2 defaults", () => {
+  const c = initCard();
+  assertEqual(c.ease, 2.5, "ease starts at 2.5");
+  assertEqual(c.interval, 0, "interval starts at 0");
+  assertEqual(c.repetitions, 0, "reps start at 0");
+  assertEqual(c.lastReviewed, null, "lastReviewed null");
+  assertEqual(c.nextDue, null, "nextDue null");
+});
+
+/* ========== First review (repetitions goes 0 → 1) ========== */
+
+test("first Good review: interval becomes 1, reps=1, ease ≈ 2.5", () => {
+  const now = 1_000_000_000_000;
+  const c = review(initCard(), RATE.GOOD, now);
+  assertEqual(c.repetitions, 1);
+  assertEqual(c.interval, 1, "first rep interval is 1 day");
+  assertClose(c.ease, 2.5, 0.001, "ease unchanged for q=4");
+  assertEqual(c.lastReviewed, now);
+  assertEqual(c.nextDue, now + 1 * DAY_MS);
+});
+
+test("first Easy review: reps=1, interval=1, ease increases", () => {
+  const c = review(initCard(), RATE.EASY, 1_000_000_000_000);
+  assertEqual(c.repetitions, 1);
+  assertEqual(c.interval, 1);
+  assert(c.ease > 2.5, "Easy rating raises ease");
+  assertClose(c.ease, 2.6, 0.001, "q=5: ease + 0.1 = 2.6");
+});
+
+test("first Hard review: reps=1, interval=1, ease decreases", () => {
+  const c = review(initCard(), RATE.HARD, 1_000_000_000_000);
+  assertEqual(c.repetitions, 1);
+  assertEqual(c.interval, 1);
+  assert(c.ease < 2.5, "Hard rating lowers ease");
+  assertClose(c.ease, 2.36, 0.001, "q=3: ease + (0.1 - 2*(0.08+2*0.02)) = 2.5 - 0.14 = 2.36");
+});
+
+/* ========== Second review (repetitions 1 → 2) ========== */
+
+test("second Good review: interval becomes 6, reps=2", () => {
+  const now = 1_000_000_000_000;
+  let c = review(initCard(), RATE.GOOD, now);
+  c = review(c, RATE.GOOD, now + DAY_MS);
+  assertEqual(c.repetitions, 2);
+  assertEqual(c.interval, 6, "second rep interval is 6 days");
+  assertEqual(c.nextDue, now + DAY_MS + 6 * DAY_MS);
+});
+
+/* ========== Third+ review (repetitions >= 3): interval *= ease ========== */
+
+test("third Good review: interval = round(prev * ease)", () => {
+  const now = 1_000_000_000_000;
+  let c = review(initCard(), RATE.GOOD, now);           // rep 1, int 1
+  c = review(c, RATE.GOOD, now + DAY_MS);               // rep 2, int 6
+  const preEase = c.ease;
+  c = review(c, RATE.GOOD, now + 7 * DAY_MS);           // rep 3, int ~= round(6*ease)
+  assertEqual(c.repetitions, 3);
+  assertEqual(c.interval, Math.round(6 * preEase));
+});
+
+/* ========== Again resets ========== */
+
+test("Again at rep=3 resets reps to 0, interval to 1, ease drops", () => {
+  const now = 1_000_000_000_000;
+  let c = review(initCard(), RATE.GOOD, now);
+  c = review(c, RATE.GOOD, now + DAY_MS);
+  c = review(c, RATE.GOOD, now + 7 * DAY_MS);
+  const preEase = c.ease;
+  c = review(c, RATE.AGAIN, now + 30 * DAY_MS);
+  assertEqual(c.repetitions, 0, "reps reset");
+  assertEqual(c.interval, 1, "interval reset to 1");
+  assert(c.ease < preEase, "ease drops on Again");
+});
+
+test("Again after mature card still schedules for the next day", () => {
+  const now = 1_000_000_000_000;
+  let c = review(initCard(), RATE.GOOD, now);
+  c = review(c, RATE.GOOD, now + DAY_MS);
+  c = review(c, RATE.GOOD, now + 7 * DAY_MS);
+  c = review(c, RATE.GOOD, now + 30 * DAY_MS);
+  const beforeAgain = c;
+  c = review(c, RATE.AGAIN, now + 60 * DAY_MS);
+  assertEqual(c.nextDue, now + 60 * DAY_MS + 1 * DAY_MS, "Again schedules tomorrow");
+  assert(c.lastReviewed === now + 60 * DAY_MS, "lastReviewed updates even on reset");
+});
+
+/* ========== Ease clamp ========== */
+
+test("ease clamps at 1.3 no matter how many Again ratings", () => {
+  const now = 1_000_000_000_000;
+  let c = initCard();
+  for (let i = 0; i < 20; i++) c = review(c, RATE.AGAIN, now + i * DAY_MS);
+  assert(c.ease >= 1.3, "ease >= 1.3");
+  assertEqual(c.ease, 1.3, "ease exactly clamped at 1.3");
+});
+
+/* ========== Interval ceiling ========== */
+
+test("interval never grows past 365 days even with many Easy ratings", () => {
+  const now = 1_000_000_000_000;
+  let c = initCard();
+  for (let i = 0; i < 50; i++) c = review(c, RATE.EASY, now + i * DAY_MS);
+  assert(c.interval <= 365, `interval <= 365, got ${c.interval}`);
+});
+
+/* ========== daysUntil helper ========== */
+
+test("daysUntil: due-today card returns 0", () => {
+  const now = 1_000_000_000_000;
+  const c = { nextDue: now };
+  assertEqual(daysUntil(c, now), 0);
+});
+
+test("daysUntil: 3 days in future returns 3", () => {
+  const now = 1_000_000_000_000;
+  const c = { nextDue: now + 3 * DAY_MS };
+  assertEqual(daysUntil(c, now), 3);
+});
+
+test("daysUntil: overdue card returns negative", () => {
+  const now = 1_000_000_000_000;
+  const c = { nextDue: now - 2 * DAY_MS };
+  assertEqual(daysUntil(c, now), -2);
+});
+
+test("daysUntil: null card treated as due now", () => {
+  const now = 1_000_000_000_000;
+  assertEqual(daysUntil({ nextDue: null }, now), 0);
+});
+
+/* ========== Determinism (same inputs => same outputs) ========== */
+
+test("review() is pure: same inputs produce same outputs", () => {
+  const c1 = review(initCard(), RATE.GOOD, 1_000_000_000_000);
+  const c2 = review(initCard(), RATE.GOOD, 1_000_000_000_000);
+  assertEqual(JSON.stringify(c1), JSON.stringify(c2));
+});
+
+test("review() does not mutate input card", () => {
+  const a = initCard();
+  const before = JSON.stringify(a);
+  review(a, RATE.GOOD, 1_000_000_000_000);
+  assertEqual(JSON.stringify(a), before, "input card object is unchanged");
+});
+
+/* ========== Summary ========== */
+
+summary.textContent = `${passed} passed, ${failed} failed`;
+summary.className = "summary " + (failed === 0 ? "ok" : "ko");
+
+if (failed) {
+  const ul = document.createElement("ul");
+  for (const f of failures) {
+    const li = document.createElement("li");
+    li.textContent = `${f.name}: ${f.err.message}`;
+    ul.appendChild(li);
+  }
+  summary.appendChild(ul);
+}
+</script>
+</body>
+</html>

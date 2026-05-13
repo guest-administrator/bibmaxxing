@@ -1,0 +1,2381 @@
+{
+  "id": "CWT-CORE",
+  "track": "cwt-core",
+  "rating": "CWT",
+  "paygrade": "core",
+  "cycle": "Continuous core bank",
+  "examType": "core",
+  "scope": "reference-only",
+  "sourceBibId": "CWT-E7",
+  "contentBaseBib": "CWT-E7",
+  "contentBasePath": "data/bibs/CWT-E7/",
+  "generatedFrom": {
+    "bibId": "CWT-E7",
+    "generatedAt": "2026-05-13T23:00:56.453Z",
+    "rule": "coreObjective=true, publicSafe=true, examRelevance=regular, no restricted/CUI/classified sourceRef or refs"
+  },
+  "note": "Reusable public-safe CWT objective/question bank. Excluded from advancement-exam weighted readiness.",
+  "sectionsNote": "Sections are used as CWT skill domains only. No exam item counts are carried in CWT Core.",
+  "objectivesNote": "Objectives were extracted from CWT-E7 public-safe coreObjective records and marked examRelevance=core.",
+  "references": [
+    {
+      "id": "BOOK-ADV-TRADECRAFT",
+      "title": "Adversarial Tradecraft in Cybersecurity",
+      "type": "Book",
+      "isbn": "978-1-80107-814-6",
+      "studyTopics": "Persistence options",
+      "availability": "public-downloaded",
+      "localPath": "references/Adversarial Tradecraft in Cybersecurity-9781801076203.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-ARCH-COMP-HW",
+      "title": "The Architecture of Computer Hardware, Systems Software, and Networking, An Information Technology Approach (5th Ed)",
+      "type": "Book",
+      "studyTopics": "Sections 12, 17, 18",
+      "availability": "public-downloaded",
+      "localPath": "references/The Architecture of Computer Hardware, Systems Software, & Networking - An Information Technology Approach, 5th Edition-9781118322635.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-ART-MEM-FORENSICS",
+      "title": "The Art of Memory Forensics: Detecting Malware and Threats in Windows, Linux, and Mac Memory",
+      "type": "Book",
+      "isbn": "978-1-118-82509-9",
+      "studyTopics": "Code injection",
+      "availability": "public-downloaded",
+      "localPath": "references/The Art of Memory Forensics - Detecting Malware and Threats in Windows, Linux, and Mac Memory-9781118824993.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-ASM-PROG",
+      "title": "Mastering Assembly Programming",
+      "type": "Book",
+      "isbn": "978-1-78712-007-5",
+      "studyTopics": "General-purpose register; OS interface; processor registers",
+      "availability": "public-downloaded",
+      "alternatives": [
+        {
+          "coverage": "x86-64 general-purpose and processor registers (authoritative spec)",
+          "title": "Intel 64 and IA-32 Software Developer Manual Vol 1 - Basic Architecture",
+          "url": "https://cdrdv2-public.intel.com/671436/253665-sdm-vol-1.pdf",
+          "kind": "free-pdf",
+          "note": "Intel's own specification. Exhaustive, free, authoritative. Covers GP registers, segment registers, FPU, XMM/YMM/ZMM, and MSRs."
+        },
+        {
+          "coverage": "x86-64 assembly hands-on course",
+          "title": "OpenSecurityTraining2 — Architecture 1001: x86-64 Assembly",
+          "url": "https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2+Arch1001_x86-64_Asm+2021_v1/about",
+          "kind": "free-course",
+          "note": "Free OST2 course. Covers registers, calling conventions, stack, control flow, and the ~20-30 instructions that cover 99% of real programs. Perfect companion to the Intel SDM."
+        },
+        {
+          "coverage": "Follow-on — x86-64 OS internals (the OS interface study topic)",
+          "title": "OpenSecurityTraining2 — Architecture 2001: x86-64 OS Internals",
+          "url": "https://beta.ost2.fyi/courses/course-v1:OpenSecurityTraining2+Arch2001_x86-64_OS_Internals+2022_v1_jc/about",
+          "kind": "free-course"
+        },
+        {
+          "coverage": "Practical assembly via compiler output (read-along examples)",
+          "title": "Dennis Yurichev — Reverse Engineering for Beginners (beginners.re)",
+          "url": "https://beginners.re/",
+          "kind": "free-pdf",
+          "note": "942-page free textbook (CC BY-SA). Part 1 covers GP registers, stack, and calling conventions with compiler-output examples."
+        },
+        {
+          "coverage": "Optimizing x86 assembly (deep register/pipeline detail)",
+          "title": "Agner Fog — Optimizing Assembly Manuals",
+          "url": "https://www.agner.org/optimize/",
+          "kind": "free-pdf"
+        }
+      ],
+      "localPath": "references/Mastering Assembly Programming-9781787287488.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-AUTO-BORING-PY",
+      "title": "Automate the Boring Stuff with Python (2nd Ed)",
+      "type": "Book",
+      "studyTopics": "Chapter 12",
+      "availability": "public-downloaded",
+      "localPath": "references/Automate the Boring Stuff with Python, 2nd Edition-9781098122584.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-BTFM",
+      "title": "Blue Team Field Manual",
+      "type": "Book",
+      "studyTopics": "Malware Analysis chapter",
+      "availability": "public-downloaded",
+      "localPath": "references/Blue Team Field Manual (BTFM).pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-CCNA",
+      "title": "CCNA Network Study Guide (7th Ed)",
+      "type": "Book",
+      "isbn": "978-1-119-65962-4",
+      "studyTopics": "IPv6 routing protocols, monitoring access lists, OSI model",
+      "availability": "public-downloaded",
+      "editionMatch": "strict",
+      "alternatives": [
+        {
+          "coverage": "IPv6 addressing architecture (authoritative)",
+          "title": "RFC 4291 — IP Version 6 Addressing Architecture",
+          "url": "https://www.rfc-editor.org/rfc/rfc4291",
+          "kind": "rfc"
+        },
+        {
+          "coverage": "IPv6 neighbor discovery",
+          "title": "RFC 4861 — Neighbor Discovery for IPv6",
+          "url": "https://www.rfc-editor.org/rfc/rfc4861",
+          "kind": "rfc"
+        },
+        {
+          "coverage": "IPv6 routing fundamentals (vendor guide)",
+          "title": "Cisco IPv6 Basic Configuration Guide",
+          "url": "https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/ipv6_basic/configuration/xe-3s/ip6b-xe-3s-book.html",
+          "kind": "free-docs"
+        },
+        {
+          "coverage": "IPv6 access control lists (vendor guide)",
+          "title": "Cisco Security Configuration Guide: IPv6 ACLs",
+          "url": "https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_data_acl/configuration/xe-16/sec-data-acl-xe-16-book/ip6-acls-xe.html",
+          "kind": "free-docs"
+        },
+        {
+          "coverage": "Monitoring ACLs (infrastructure protection)",
+          "title": "Cisco — Protecting Your Core: Infrastructure Protection ACLs",
+          "url": "https://www.cisco.com/c/en/us/support/docs/ip/access-lists/43920-iacl.pdf",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "OSI model (free interactive course)",
+          "title": "Cisco Networking Academy — Introduction to Networks",
+          "url": "https://www.netacad.com/courses/networking/ccna-introduction-networks",
+          "kind": "free-course",
+          "note": "Free Cisco course covering OSI + TCP/IP models, Ethernet, routing fundamentals."
+        }
+      ],
+      "localPath": "references/CCNA Certification Study Guide (Lammle).pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-CEH",
+      "title": "Certified Ethical Hacker Study Guide v11",
+      "type": "Book",
+      "isbn": "978-1-119-80030-9",
+      "studyTopics": "Chapters 7, 13",
+      "availability": "public-downloaded",
+      "editionMatch": "strict",
+      "note": "v11 specifically — EC-Council v12/v13 cover different objectives.",
+      "alternatives": [
+        {
+          "coverage": "Ch 7 — System Hacking (priv-esc, credential access, persistence)",
+          "title": "MITRE ATT&CK — Privilege Escalation (TA0004)",
+          "url": "https://attack.mitre.org/tactics/TA0004/",
+          "kind": "free-framework",
+          "note": "CEH Ch 7 topics map 1:1 with ATT&CK tactics TA0004 (PrivEsc), TA0006 (Credential Access), TA0003 (Persistence). Every technique has a detection page."
+        },
+        {
+          "coverage": "Ch 7 — Credential Access tactic",
+          "title": "MITRE ATT&CK — Credential Access (TA0006)",
+          "url": "https://attack.mitre.org/tactics/TA0006/",
+          "kind": "free-framework"
+        },
+        {
+          "coverage": "Ch 7 — Persistence tactic",
+          "title": "MITRE ATT&CK — Persistence (TA0003)",
+          "url": "https://attack.mitre.org/tactics/TA0003/",
+          "kind": "free-framework"
+        },
+        {
+          "coverage": "Ch 7 — Pen test + system testing methodology",
+          "title": "NIST SP 800-115 — Technical Guide to Information Security Testing and Assessment",
+          "url": "https://csrc.nist.gov/pubs/sp/800/115/final",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "Ch 13 — Cryptography (symmetric block cipher, the AES standard)",
+          "title": "NIST FIPS 197 — Advanced Encryption Standard (AES)",
+          "url": "https://www.nist.gov/publications/advanced-encryption-standard-aes",
+          "kind": "free-pdf",
+          "note": "The authoritative AES specification. CEH v11 Ch 13 covers AES + modes (ECB/CBC/CTR/GCM); FIPS 197 is the underlying standard."
+        },
+        {
+          "coverage": "Ch 13 — Cryptography (mechanisms survey across federal standards)",
+          "title": "NIST SP 800-175B Rev.1 — Guidelines for Using Cryptographic Standards: Cryptographic Mechanisms",
+          "url": "https://csrc.nist.gov/pubs/sp/800/175/b/final",
+          "kind": "free-pdf",
+          "note": "Survey doc mapping every cryptographic primitive (symmetric, asymmetric, hash, MAC, KDF, RNG) to its FIPS or SP citation. The single best on-ramp to NIST's cryptography library."
+        },
+        {
+          "coverage": "Ch 13 — Cryptography (hash functions standard)",
+          "title": "NIST FIPS 180-4 — Secure Hash Standard (SHA-1, SHA-2 family)",
+          "url": "https://csrc.nist.gov/pubs/fips/180-4/upd1/final",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "Ch 13 — Cryptography (digital signature standard)",
+          "title": "NIST FIPS 186-5 — Digital Signature Standard (DSS): RSA, ECDSA, EdDSA",
+          "url": "https://csrc.nist.gov/pubs/fips/186-5/final",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "Ch 13 — Cryptography (key management)",
+          "title": "NIST SP 800-57 Part 1 Rev.5 — Recommendation for Key Management",
+          "url": "https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final",
+          "kind": "free-pdf",
+          "note": "Lifecycle, cryptoperiods, key wrapping, KDFs, forward secrecy. The single most testable Ch 13 publication for key-management questions."
+        },
+        {
+          "coverage": "Ch 13 — Cryptography (Diffie-Hellman / ECDH key establishment)",
+          "title": "NIST SP 800-56A Rev.3 — Pair-Wise Key Establishment Using Discrete Logarithm Cryptography",
+          "url": "https://csrc.nist.gov/pubs/sp/800/56/a/r3/final",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "Ch 13 — Cryptography (PKI / X.509 certificate format)",
+          "title": "RFC 5280 — Internet X.509 PKI Certificate and CRL Profile",
+          "url": "https://www.rfc-editor.org/rfc/rfc5280",
+          "kind": "rfc"
+        },
+        {
+          "coverage": "Ch 13 — Cryptography (OpenPGP message format, current edition)",
+          "title": "RFC 9580 — OpenPGP",
+          "url": "https://www.rfc-editor.org/rfc/rfc9580",
+          "kind": "rfc"
+        },
+        {
+          "coverage": "Ch 13 — Cryptography (S/MIME message format)",
+          "title": "RFC 8551 — Secure/Multipurpose Internet Mail Extensions (S/MIME) Version 4 Message Specification",
+          "url": "https://www.rfc-editor.org/rfc/rfc8551",
+          "kind": "rfc"
+        },
+        {
+          "coverage": "Ch 13 — Cryptography (storage encryption)",
+          "title": "NIST SP 800-111 — Guide to Storage Encryption Technologies for End User Devices",
+          "url": "https://csrc.nist.gov/pubs/sp/800/111/final",
+          "kind": "free-pdf"
+        }
+      ],
+      "localPath": "references/CEH v11 Certified Ethical Hacker Study Guide (Messier).pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-CISSP",
+      "title": "CISSP (ISC)² Certified Information Systems Security Professional Official Study Guide (7th Ed)",
+      "type": "Book",
+      "isbn": "978-1-119-04271-6",
+      "studyTopics": "Chapters 4, 7",
+      "availability": "public-downloaded",
+      "editionMatch": "strict",
+      "note": "7th Ed specifically — 8th/9th/10th editions reflect newer CBK revisions that differ from what the Bib tests.",
+      "localPath": "references/CISSP (ISC)2 Official Study Guide 7th Edition.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-CPP-HTP",
+      "title": "C++ How to Program (10th Ed)",
+      "type": "Book",
+      "studyTopics": "Sections 1, 7, 17",
+      "availability": "public-downloaded",
+      "localPath": "references/C++ How to Program, 10e-9780134448930.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-CWNA",
+      "title": "Certified Wireless Network Administrator Study Guide (6th Ed)",
+      "type": "Book",
+      "isbn": "978-1-119-67566-2",
+      "studyTopics": "Chapter 1",
+      "availability": "public-downloaded",
+      "editionMatch": "strict",
+      "localPath": "references/CWNA Certified Wireless Network Administrator Study Guide, 6th Edition-9781119734505.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-CYBER-OPS",
+      "title": "Cyber Operations: Building, Defending, and Attacking Modern Computer Networks",
+      "type": "Book",
+      "isbn": "978-1-4842-4294-3",
+      "studyTopics": "Chapters 2, 5, 16",
+      "availability": "public-downloaded",
+      "localPath": "references/Cyber Operations - Building, Defending, and Attacking Modern Computer Networks-9781484242940.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-GOOGLE-HACKING",
+      "title": "Google Hacking for Pen Testers (3rd Ed)",
+      "type": "Book",
+      "studyTopics": "Enumeration",
+      "availability": "public-downloaded",
+      "localPath": "references/Google Hacking for Penetration Testers, 3rd Edition-9780128029824.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-GRAY-HAT",
+      "title": "Gray Hat Hacking (6th Ed)",
+      "type": "Book",
+      "isbn": "978-1-264-26895-5",
+      "studyTopics": "Chapter 21",
+      "availability": "public-downloaded",
+      "localPath": "references/Gray Hat Hacking - The Ethical Hacker's Handbook, Sixth Edition, 6th Edition-9781264268955.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-HACKER-TECH",
+      "title": "Hacker Techniques, Tools, and Incident Handling (2nd Ed)",
+      "type": "Book",
+      "studyTopics": "Chapter 7",
+      "availability": "public-downloaded",
+      "alternatives": [
+        {
+          "coverage": "System hacking tactics (priv-esc, credential access, defense evasion) — authoritative framework",
+          "title": "MITRE ATT&CK Enterprise — Tactics and Techniques",
+          "url": "https://attack.mitre.org/matrices/enterprise/",
+          "kind": "free-framework",
+          "note": "Every attack type this chapter covers (enumeration, password cracking, priv-esc, rootkits, covering tracks) maps directly to ATT&CK techniques."
+        },
+        {
+          "coverage": "Security testing methodology (enumeration, vulnerability testing)",
+          "title": "NIST SP 800-115 — Technical Guide to Information Security Testing and Assessment",
+          "url": "https://csrc.nist.gov/pubs/sp/800/115/final",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "Windows SIDs, accounts, tokens, authentication internals",
+          "title": "Microsoft Learn — Windows Authentication Technical Overview",
+          "url": "https://learn.microsoft.com/en-us/windows-server/security/windows-authentication/windows-authentication-overview",
+          "kind": "free-docs"
+        },
+        {
+          "coverage": "Incident response lifecycle (the Incident Handling half of the book)",
+          "title": "NIST SP 800-61 Rev.2 — Computer Security Incident Handling Guide",
+          "url": "https://csrc.nist.gov/pubs/sp/800/61/r2/final",
+          "kind": "free-pdf",
+          "note": "Authoritative NIST IR guide. Covers preparation, detection, containment, eradication, recovery, post-incident."
+        }
+      ],
+      "localPath": "references/Hacker Techniques, Tools, and Incident Handling, 2nd Edition-9781284031713.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-NET-INTRUSION",
+      "title": "Network Intrusion Detection (3rd Ed)",
+      "type": "Book",
+      "studyTopics": "Chapters 12, 14; stimulus and response",
+      "availability": "public-downloaded",
+      "localPath": "references/Network Intrusion Detection, Third Edition-0735712654.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-OS-CONCEPTS",
+      "title": "Operating System Concepts (9th Ed)",
+      "type": "Book",
+      "studyTopics": "Chapters 3, 8",
+      "availability": "public-downloaded",
+      "localPath": "references/Operating System Concepts, 9th Edition-9781118063330.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-PRACTICAL-MEM",
+      "title": "Practical Memory Forensics",
+      "type": "Book",
+      "isbn": "978-1-80107-954-9",
+      "studyTopics": "Chapters 5, 7",
+      "availability": "public-downloaded",
+      "alternatives": [
+        {
+          "coverage": "Ch 5 — Windows malware detection/analysis via memory forensics (authoritative tool docs)",
+          "title": "Volatility Foundation — Framework Documentation",
+          "url": "https://volatilityfoundation.org/the-volatility-framework/",
+          "kind": "free-docs",
+          "note": "Volatility is THE open-source memory forensics tool. Its plugin docs (pslist, malfind, cmdline, handles, dlllist, svcscan, etc.) map directly to the malware-detection-in-memory scope."
+        },
+        {
+          "coverage": "Volatility 3 source + plugin reference",
+          "title": "Volatility 3 on GitHub",
+          "url": "https://github.com/volatilityfoundation/volatility3",
+          "kind": "free-tool"
+        },
+        {
+          "coverage": "Ch 7 — Linux memory acquisition (LiME kernel module)",
+          "title": "LiME — Linux Memory Extractor",
+          "url": "https://github.com/504ensicslabs/lime",
+          "kind": "free-tool",
+          "note": "The go-to open-source tool for Linux RAM acquisition. README covers the acquisition process end-to-end."
+        },
+        {
+          "coverage": "Memory forensics quick reference (Windows/Linux/Mac)",
+          "title": "SANS DFIR — Memory Forensics Poster (FOR526 companion)",
+          "url": "https://www.sans.org/posters/dfir-memory-forensics",
+          "kind": "free-poster"
+        },
+        {
+          "coverage": "Curated memory-forensics resource list",
+          "title": "digitalisx/awesome-memory-forensics",
+          "url": "https://github.com/digitalisx/awesome-memory-forensics",
+          "kind": "free-list"
+        },
+        {
+          "coverage": "Already on your Bib — heavily overlaps PMF Ch 5 and Ch 7",
+          "title": "The Art of Memory Forensics (BOOK-ART-MEM-FORENSICS on this Bib)",
+          "url": "#references/BOOK-ART-MEM-FORENSICS",
+          "kind": "cross-ref",
+          "note": "You already have this book in-app. Its Windows malware chapters and Linux memory-analysis chapters cover nearly all the same ground as Practical Memory Forensics Ch 5 and Ch 7."
+        }
+      ],
+      "localPath": "references/Practical Memory Forensics-9781801070331.pdf",
+      "recoveryNote": "Salvaged from a corrupt O'Reilly EPUB export via OPF reconstruction from the intact NCX. Content is complete (514 pages, 18 chapters).",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-REVERSE-ENG",
+      "title": "Mastering Reverse Engineering",
+      "type": "Book",
+      "isbn": "978-1-78883-529-9",
+      "studyTopics": "Preparing to reverse; reverse engineering as a process",
+      "availability": "public-downloaded",
+      "alternatives": [
+        {
+          "coverage": "Reverse engineering as a process (complete free textbook)",
+          "title": "Dennis Yurichev — Reverse Engineering for Beginners",
+          "url": "https://beginners.re/",
+          "kind": "free-pdf",
+          "note": "942 pages, CC BY-SA. Step-by-step RE methodology: disassembly, data structures, calling conventions, code patterns. Covers x86/x64/ARM/MIPS."
+        },
+        {
+          "coverage": "Malware-focused RE (preparing to reverse, triage, static/dynamic)",
+          "title": "MalwareUnicorn — Reverse Engineering 101",
+          "url": "https://malwareunicorn.org/workshops/re101.html",
+          "kind": "free-course",
+          "note": "Amanda Rousseau's free workshop: environment setup, PE anatomy, x86 assembly, triage + static + dynamic labs. Exact match for the Bib's preparing-to-reverse scope."
+        },
+        {
+          "coverage": "Anti-RE techniques (VM evasion, packing, obfuscation)",
+          "title": "MalwareUnicorn — Reverse Engineering 102",
+          "url": "https://malwareunicorn.org/workshops/re102",
+          "kind": "free-course"
+        },
+        {
+          "coverage": "RE tooling (NSA-maintained, free, rivals IDA Pro)",
+          "title": "NSA Ghidra (official GitHub)",
+          "url": "https://github.com/NationalSecurityAgency/ghidra",
+          "kind": "free-tool",
+          "note": "Free SRE framework from the NSA. Ships with extensive documentation and hands-on tutorials."
+        },
+        {
+          "coverage": "Hands-on Ghidra course (4 sessions)",
+          "title": "Wrongbaud — Introduction to Reverse Engineering with Ghidra",
+          "url": "https://wrongbaud.github.io/posts/ghidra-training/",
+          "kind": "free-course"
+        },
+        {
+          "coverage": "Annual free reverse engineering CTF",
+          "title": "NSA Codebreaker Challenge",
+          "url": "https://codebreaker.ltsnet.net/home",
+          "kind": "free-challenge",
+          "note": "NSA's annual free CTF — practical RE and crypto problems. Great practice for the RE process."
+        }
+      ],
+      "localPath": "references/Mastering Reverse Engineering-9781788838849.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-RTFM",
+      "title": "Red Team Field Manual (v2)",
+      "type": "Book",
+      "studyTopics": "Windows section",
+      "availability": "public-downloaded",
+      "localPath": "references/RTFM Red Team Field Manual v2 -- Ben Clark & Nick Downer.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-SEC-PLUS-401",
+      "title": "CompTIA Security+ Study Guide SY0-401 (6th Ed)",
+      "type": "Book",
+      "isbn": "978-1-118-87507-0",
+      "studyTopics": "Designing a secure network, fault tolerance for data, wireless systems",
+      "availability": "public-downloaded",
+      "editionMatch": "strict",
+      "alternatives": [
+        {
+          "coverage": "Designing a secure network (enterprise)",
+          "title": "NIST SP 800-46 Rev.2 — Enterprise Telework, Remote Access, and BYOD Security",
+          "url": "https://csrc.nist.gov/pubs/sp/800/46/r2/final",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "Secure network controls catalog",
+          "title": "NIST SP 800-53 Rev.5 — Security and Privacy Controls (SC family)",
+          "url": "https://csrc.nist.gov/pubs/sp/800/53/r5/final",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "Fault tolerance / contingency planning",
+          "title": "NIST SP 800-34 Rev.1 — Contingency Planning Guide",
+          "url": "https://csrc.nist.gov/pubs/sp/800/34/r1/final",
+          "kind": "free-pdf",
+          "note": "Covers data backup, redundancy, recovery strategies — the fault-tolerance study topic."
+        },
+        {
+          "coverage": "Wireless systems (802.11i / WPA2)",
+          "title": "NIST SP 800-97 — Establishing Wireless Robust Security Networks: A Guide to IEEE 802.11i",
+          "url": "https://csrc.nist.gov/pubs/sp/800/97/final",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "Wireless systems (legacy 802.11)",
+          "title": "NIST SP 800-48 Rev.1 — Securing Legacy IEEE 802.11 Wireless Networks",
+          "url": "https://csrc.nist.gov/pubs/sp/800/48/r1/final",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "SY0-401 exam-level review",
+          "title": "Professor Messer — SY0-401 Archived Training (free)",
+          "url": "https://www.professormesser.com/security-plus/sy0-401/sy0-401-course-index/",
+          "kind": "free-video",
+          "note": "Older but covers the exact SY0-401 objectives the Bib references."
+        }
+      ],
+      "localPath": "references/CompTIA Security+ Study Guide SY0-401 6th Ed (Dulaney).pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-SEC-PLUS-601",
+      "title": "CompTIA Security+ SY0-601 Cert Guide (5th Ed)",
+      "type": "Book",
+      "isbn": "978-0-13-677031-2",
+      "studyTopics": "Log files",
+      "availability": "public-downloaded",
+      "editionMatch": "strict",
+      "alternatives": [
+        {
+          "coverage": "Log files — authoritative deep dive",
+          "title": "NIST SP 800-92 — Guide to Computer Security Log Management",
+          "url": "https://nvlpubs.nist.gov/nistpubs/legacy/sp/nistspecialpublication800-92.pdf",
+          "kind": "free-pdf",
+          "note": "Gold-standard free NIST guide; directly on-topic for all log files study content."
+        },
+        {
+          "coverage": "Log management (updated draft)",
+          "title": "NIST SP 800-92 Rev.1 (Draft) — Cybersecurity Log Management Planning Guide",
+          "url": "https://csrc.nist.gov/pubs/sp/800/92/r1/ipd",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "SY0-601 exam-level log files review",
+          "title": "Professor Messer — SY0-601 Free Training Videos",
+          "url": "https://www.professormesser.com/security-plus/sy0-601/sy0-601-video/",
+          "kind": "free-video",
+          "note": "Covers log-file sections at the SY0-601 objective level."
+        }
+      ],
+      "localPath": "references/CompTIA Security+ SY0-601 Cert Guide 5th Ed (Santos).pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-TCPIP-GUIDE",
+      "title": "The TCP/IP Guide — A Comprehensive, Illustrated Internet Protocols Reference",
+      "type": "Book",
+      "studyTopics": "Chapters 3, 55, 70, 73",
+      "availability": "public-downloaded",
+      "localPath": "references/TCPIP Guide-9781593270476.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-WIN-CLI-PC",
+      "title": "Windows Command-Line Administrator's Pocket Consultant (2nd Ed)",
+      "type": "Book",
+      "studyTopics": "Appendix A",
+      "availability": "public-downloaded",
+      "localPath": "references/Windows® Command-Line Administrators Pocket Consultant, Second Edition-9780735622623.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-WIN-INTERNALS-1",
+      "title": "Windows Internals Part 1 (7th Ed)",
+      "type": "Book",
+      "isbn": "978-0-7356-8418-8",
+      "studyTopics": "Chapter 5",
+      "availability": "public-downloaded",
+      "localPath": "references/Windows Internals, Part 1 - System architecture, processes, threads, memory management, and more, Seventh Edition-9780133986471.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "BOOK-WIN-INTERNALS-2",
+      "title": "Windows Internals Part 2 (6th Ed)",
+      "type": "Book",
+      "studyTopics": "Chapters 8, 13",
+      "availability": "public-downloaded",
+      "localPath": "references/Windows® Internals, Sixth Edition, Part 2-9780735677265.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "CJCSI-3121.01B",
+      "title": "CJCSI 3121.01B — Standing Rules of Engagement / Standing Rules for the Use of Force for US Forces",
+      "type": "CJCSI",
+      "studyTopics": "Enclosure F",
+      "availability": "public-downloaded",
+      "note": "Local file is the FOIA-released public version (DoD 20-F-1436). Some original portions remain redacted; unclassified enclosures are substantively intact and cover the SROE/SRUF framework.",
+      "alternatives": [
+        {
+          "coverage": "ROE training summary (Operational Law Handbook 2020)",
+          "title": "Operational Law Handbook 2020 — SROE Chapter 5",
+          "url": "https://sites.duke.edu/lawfire/files/2020/10/ROEOperational-Law-Handbook-2020.pdf",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "Black Vault archive copy",
+          "title": "CJCSI 3121.01B — The Black Vault",
+          "url": "https://www.theblackvault.com/documentarchive/cjcsi-3121-01b-standing-rules-of-engagement-standing-rules-for-the-use-of-force-for-us-forces-13-june-2005-current-a-o-18-june-2008/",
+          "kind": "free-pdf-mirror"
+        },
+        {
+          "coverage": "Public SROE/LOAC analysis from Army JAG school",
+          "title": "Operational Law Handbook (Army JAG School) — SROE chapter",
+          "url": "https://tjaglcspublic.army.mil/",
+          "kind": "free-docs",
+          "note": "Army JAG School publishes an Operational Law Handbook with extensive SROE discussion. Public, updated annually."
+        },
+        {
+          "coverage": "Law of Armed Conflict (public deskbook)",
+          "title": "Law of Armed Conflict Deskbook — Army JAG",
+          "url": "https://tjaglcspublic.army.mil/",
+          "kind": "free-docs"
+        },
+        {
+          "coverage": "NATO equivalent rules of engagement doctrine",
+          "title": "NATO MC 362/1 ROE doctrine (public summaries)",
+          "url": "https://www.nato.int/cps/en/natohq/topics_127539.htm",
+          "kind": "free-docs"
+        },
+        {
+          "coverage": "DoD Law of War Manual (public, extensive)",
+          "title": "DoD Law of War Manual (2015, rev)",
+          "url": "https://dod.defense.gov/Portals/1/Documents/pubs/DoD%20Law%20of%20War%20Manual%20-%20June%202015%20Updated%20Dec%202016.pdf",
+          "kind": "free-pdf",
+          "note": "The most comprehensive public DoD document on use of force, LOAC, and ROE context."
+        }
+      ],
+      "sourceUrl": "https://www.esd.whs.mil/Portals/54/Documents/FOID/Reading%20Room/Joint_Staff/20-F-1436_FINAL_RELEASE.pdf",
+      "localPath": "references/CJCSI-3121.01B SROE SRUF.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "CJCSI-3370.01B",
+      "title": "CJCSI 3370.01B — Target Development Standards",
+      "type": "CJCSI",
+      "studyTopics": "Enclosure D",
+      "availability": "public-downloaded",
+      "alternatives": [
+        {
+          "coverage": "JITD Course Syllabus — covers target development training (public)",
+          "title": "Joint Intermediate Target Development Course Syllabus (2016)",
+          "url": "https://www.jcs.mil/Portals/36/Documents/Doctrine/training/jts/target_dev_course_syllabusjan2016.pdf",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "Joint targeting fundamentals (public)",
+          "title": "JP 3-60 — Joint Targeting",
+          "url": "https://irp.fas.org/doddir/dod/jp3_60.pdf",
+          "kind": "free-pdf-mirror",
+          "note": "JP 3-60 is the public joint targeting doctrine; CJCSI 3370.01B provides target-development standards within that framework."
+        },
+        {
+          "coverage": "DoD Law of War Manual — targeting chapter",
+          "title": "DoD Law of War Manual (targeting sections)",
+          "url": "https://dod.defense.gov/Portals/1/Documents/pubs/DoD%20Law%20of%20War%20Manual%20-%20June%202015%20Updated%20Dec%202016.pdf",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "NATO joint targeting doctrine (public)",
+          "title": "NATO AJP-3.9 — Joint Targeting",
+          "url": "https://www.nato.int/cps/en/natohq/topics_",
+          "kind": "free-docs"
+        }
+      ],
+      "sourceUrl": "https://irp.fas.org/doddir/dod/cjcsi3370_01.pdf",
+      "note": "FAS mirror copy. Revision may differ from the Bib's 'B' (current is C, Aug 2018); framework and standards are consistent across revisions.",
+      "localPath": "references/CJCSI-3370.01 Target Development Standards.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "CJCSI-6510.01F",
+      "title": "CJCSI 6510.01F — IA and Computer Network Defense (Defense-in-Depth)",
+      "type": "CJCSI",
+      "studyTopics": "Enclosures A, C",
+      "availability": "public-downloaded",
+      "sourceUrl": "https://www.jcs.mil/Portals/36/Documents/Library/Instructions/6510_01.pdf",
+      "alternatives": [
+        {
+          "coverage": "DAU training resource",
+          "title": "DAU — CJCSI 6510.01F resource page",
+          "url": "https://www.dau.edu/cop/e3/documents/cjcsi-651001f",
+          "kind": "free-docs"
+        },
+        {
+          "coverage": "Modern companion manual (implementation-level)",
+          "title": "DoD Manual 8530.01 — Cybersecurity Activities Support Procedures",
+          "url": "https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodm/853001p.PDF",
+          "kind": "free-pdf",
+          "note": "DoDM 8530.01 is the current implementation manual extending CJCSI 6510.01F's IA/CND framework. Publicly available."
+        },
+        {
+          "coverage": "FAS mirror (unrestricted CJCSI/CJCSM collection)",
+          "title": "FAS — CJCS Instructions Archive",
+          "url": "https://sgp.fas.org/othergov/dod/",
+          "kind": "free-pdf-mirror"
+        },
+        {
+          "coverage": "NIST equivalent (defense-in-depth + IA)",
+          "title": "NIST SP 800-53 Rev.5 — Security and Privacy Controls",
+          "url": "https://csrc.nist.gov/pubs/sp/800/53/r5/final",
+          "kind": "free-pdf",
+          "note": "NIST 800-53 is the federal IA controls catalog; CJCSI 6510.01F implements the defense-in-depth concept using similar controls."
+        },
+        {
+          "coverage": "DoD CIO public strategy",
+          "title": "DoD CIO — Cybersecurity Strategy public releases",
+          "url": "https://dodcio.defense.gov/",
+          "kind": "free-docs"
+        }
+      ],
+      "localPath": "references/CJCSI-6510.01F Information Assurance and CND.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "CJCSM-6510.01B",
+      "title": "CJCSM 6510.01B — Cyber Incident Handling Program",
+      "type": "CJCSM",
+      "studyTopics": "Enclosures B, D",
+      "availability": "public-downloaded",
+      "sourceUrl": "https://www.jcs.mil/Portals/36/Documents/Library/Manuals/m651001.pdf",
+      "alternatives": [
+        {
+          "coverage": "Prior version archived by National Security Archive (CJCSM 6510.01A, 2009)",
+          "title": "CJCSM 6510.01A — National Security Archive",
+          "url": "https://nsarchive.gwu.edu/document/21361-document-2",
+          "kind": "free-pdf",
+          "note": "Older A-version exists publicly at NSA; the B-version supersedes but covers the same framework."
+        },
+        {
+          "coverage": "NIST equivalent — incident handling",
+          "title": "NIST SP 800-61 Rev.2 — Computer Security Incident Handling Guide",
+          "url": "https://csrc.nist.gov/pubs/sp/800/61/r2/final",
+          "kind": "free-pdf",
+          "note": "NIST 800-61 uses the same four-phase lifecycle (Prep, Detection/Analysis, Containment/Eradication/Recovery, Post-Incident) that CJCSM 6510.01B formalizes for DoD."
+        },
+        {
+          "coverage": "FAS mirror",
+          "title": "FAS — CJCS Manuals Archive",
+          "url": "https://sgp.fas.org/othergov/dod/",
+          "kind": "free-pdf-mirror"
+        },
+        {
+          "coverage": "CISA incident response",
+          "title": "CISA — Incident Response Training",
+          "url": "https://www.cisa.gov/topics/cybersecurity-best-practices/organizations-and-cyber-safety/cybersecurity-education-career-development/cybersecurity-workforce-training-guide",
+          "kind": "free-docs"
+        }
+      ],
+      "localPath": "references/CJCSM-6510.01B Cyber Incident Handling Program.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "DJSIG",
+      "title": "DJSIG — Department of Defense Intelligence Information System Joint Security Implementation Guide",
+      "type": "Guide",
+      "studyTopics": "Sections 1, 2",
+      "availability": "public-downloaded",
+      "alternatives": [
+        {
+          "coverage": "FAS HTML/PDF archive of JDCSISSS Rev 2",
+          "title": "JDCSISSS Revision 2 — FAS archive",
+          "url": "https://irp.fas.org/doddir/dod/jdcsisss-rev2.htm",
+          "kind": "free-docs"
+        },
+        {
+          "coverage": "SCI administrative security (parent manual, PUBLIC)",
+          "title": "DODM 5105.21 Vol 1 — SCI Administrative Security Manual",
+          "url": "https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodm/510521m_vol1.PDF",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "ICD 503 — risk management for intel systems (public)",
+          "title": "ODNI ICD 503 — Intelligence Community Information Technology Systems Security Risk Management",
+          "url": "https://www.dni.gov/files/documents/ICD/ICD_503.pdf",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "NIST equivalent for federal IT risk",
+          "title": "NIST SP 800-37 Rev.2 — Risk Management Framework",
+          "url": "https://csrc.nist.gov/pubs/sp/800/37/r2/final",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "ICD 705 — SCIF standards (public)",
+          "title": "ODNI ICD 705 — Sensitive Compartmented Information Facilities",
+          "url": "https://www.dni.gov/files/documents/ICD/ICD_705.pdf",
+          "kind": "free-pdf"
+        }
+      ],
+      "sourceUrl": "https://publicintelligence.net/dod-jdcsisss/",
+      "note": "Marked U//FOUO (unclassified, for-official-use). Public Intelligence and FAS both archive public copies.",
+      "localPath": "references/DJSIG JDCSISSS DoD Joint Security Implementation Guide.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "DODM-5105.21-V1",
+      "title": "DODM 5105.21 Vol 1 (Change 2) — SCI Administrative Security Manual: Information and Information Systems Security",
+      "type": "DoDM",
+      "studyTopics": "Enclosure 4",
+      "availability": "public-downloaded",
+      "sourceUrl": "https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodm/510521m_vol1.PDF",
+      "alternatives": [
+        {
+          "coverage": "Official DoD public release",
+          "title": "DODM 5105.21 Vol 1 — SCI Administrative Security Manual",
+          "url": "https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodm/510521m_vol1.PDF",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "FAS mirror (same doc, alternate host)",
+          "title": "FAS mirror of DODM 5105.21 Vol 1",
+          "url": "https://sgp.fas.org/othergov/dod/5105_21v1.pdf",
+          "kind": "free-pdf-mirror"
+        },
+        {
+          "coverage": "NAVFAC mirror",
+          "title": "NAVFAC EXWC mirror of DODM 5105.21 Vol 1",
+          "url": "https://exwc.navfac.navy.mil/Portals/88/Documents/EXWC/DoD_Locks/PDFs/DODM-5105-21-vol1.pdf",
+          "kind": "free-pdf-mirror"
+        },
+        {
+          "coverage": "ICD equivalent (intel community)",
+          "title": "ODNI Intelligence Community Directive 705 — SCI Facilities",
+          "url": "https://www.dni.gov/files/documents/ICD/ICD_705.pdf",
+          "kind": "free-pdf",
+          "note": "ICD 705 covers SCIF standards; complements DODM 5105.21's SCI admin security focus."
+        }
+      ],
+      "localPath": "references/DODM-5105.21 Vol 1 SCI Administrative Security Manual.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "JCAC-ACTIVE-EXPLOIT",
+      "title": "JCAC Student Guide — Active Exploitation",
+      "type": "Training",
+      "studyTopics": "Information gathering / target development; Nmap",
+      "availability": "needs-user",
+      "note": "JCAC student materials are distributed through the training command.",
+      "alternatives": [
+        {
+          "coverage": "Pen test methodology (authoritative NIST)",
+          "title": "NIST SP 800-115 — Technical Guide to Information Security Testing",
+          "url": "https://csrc.nist.gov/pubs/sp/800/115/final",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "MITRE ATT&CK — attack techniques and emulation",
+          "title": "MITRE ATT&CK Matrix (Enterprise)",
+          "url": "https://attack.mitre.org/matrices/enterprise/",
+          "kind": "free-framework"
+        },
+        {
+          "coverage": "Nmap official docs (the tool JCAC emphasizes)",
+          "title": "Nmap Reference Guide (free)",
+          "url": "https://nmap.org/book/man.html",
+          "kind": "free-docs"
+        },
+        {
+          "coverage": "PortSwigger free Web Security Academy",
+          "title": "PortSwigger — Web Security Academy",
+          "url": "https://portswigger.net/web-security",
+          "kind": "free-course",
+          "note": "Free hands-on labs covering the same attack techniques JCAC teaches for web targets."
+        },
+        {
+          "coverage": "TryHackMe free paths",
+          "title": "TryHackMe — Pre-Security + Jr Penetration Tester (free tiers)",
+          "url": "https://tryhackme.com/",
+          "kind": "free-course"
+        }
+      ],
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "JCAC-COMP-ORG-ARCH",
+      "title": "JCAC Student Guide — Computer Organization and Architecture",
+      "type": "Training",
+      "studyTopics": "Digital logic; x86 registers",
+      "availability": "needs-user",
+      "alternatives": [
+        {
+          "coverage": "x86-64 assembly + architecture (exact match for JCAC COA)",
+          "title": "OpenSecurityTraining2 — Architecture 1001: x86-64 Assembly",
+          "url": "https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2+Arch1001_x86-64_Asm+2021_v1/about",
+          "kind": "free-course"
+        },
+        {
+          "coverage": "OS-level architecture (follow-on)",
+          "title": "OpenSecurityTraining2 — Architecture 2001: x86-64 OS Internals",
+          "url": "https://beta.ost2.fyi/courses/course-v1:OpenSecurityTraining2+Arch2001_x86-64_OS_Internals+2022_v1_jc/about",
+          "kind": "free-course"
+        },
+        {
+          "coverage": "x86-64 architecture specification (authoritative)",
+          "title": "Intel 64 and IA-32 Software Developer Manual Vol 1",
+          "url": "https://cdrdv2-public.intel.com/671436/253665-sdm-vol-1.pdf",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "Free computer organization textbook",
+          "title": "Bryant + O'Hallaron — Computer Systems: A Programmer's Perspective (CMU free course materials)",
+          "url": "https://csapp.cs.cmu.edu/",
+          "kind": "free-docs"
+        }
+      ],
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "JCAC-FORENSIC-MAL",
+      "title": "JCAC Student Guide — Forensic Methodology and Malware Analysis",
+      "type": "Training",
+      "studyTopics": "Data recovery; digital forensics methodology; disk preparation",
+      "availability": "needs-user",
+      "alternatives": [
+        {
+          "coverage": "Malware analysis / RE fundamentals",
+          "title": "MalwareUnicorn — Reverse Engineering 101",
+          "url": "https://malwareunicorn.org/workshops/re101.html",
+          "kind": "free-course"
+        },
+        {
+          "coverage": "Memory forensics tool (authoritative)",
+          "title": "Volatility Foundation — Framework Documentation",
+          "url": "https://volatilityfoundation.org/the-volatility-framework/",
+          "kind": "free-docs"
+        },
+        {
+          "coverage": "SANS DFIR free posters",
+          "title": "SANS DFIR — Memory Forensics Poster",
+          "url": "https://www.sans.org/posters/dfir-memory-forensics",
+          "kind": "free-poster"
+        },
+        {
+          "coverage": "REMnux malware analysis Linux distro",
+          "title": "REMnux — A Linux Toolkit for Malware Analysts",
+          "url": "https://remnux.org/",
+          "kind": "free-tool"
+        },
+        {
+          "coverage": "Free textbook with CC license",
+          "title": "Dennis Yurichev — Reverse Engineering for Beginners",
+          "url": "https://beginners.re/",
+          "kind": "free-pdf"
+        }
+      ],
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "JCAC-NETWORKING",
+      "title": "JCAC Student Guide — Networking Concepts and Protocols",
+      "type": "Training",
+      "studyTopics": "ARP; DNS; IPv6; SSL",
+      "availability": "needs-user",
+      "alternatives": [
+        {
+          "coverage": "Free CCNA-equivalent networking course",
+          "title": "Cisco Networking Academy — Introduction to Networks",
+          "url": "https://www.netacad.com/courses/networking/ccna-introduction-networks",
+          "kind": "free-course"
+        },
+        {
+          "coverage": "TCP/IP reference (authoritative)",
+          "title": "The TCP/IP Guide (Kozierok) — free online version",
+          "url": "http://www.tcpipguide.com/free/",
+          "kind": "free-docs",
+          "note": "Also on this Bib as BOOK-TCPIP-GUIDE."
+        },
+        {
+          "coverage": "RFC 4291 — IPv6 addressing",
+          "title": "RFC 4291 — IPv6 Addressing Architecture",
+          "url": "https://www.rfc-editor.org/rfc/rfc4291",
+          "kind": "rfc"
+        },
+        {
+          "coverage": "RFC 4861 — IPv6 Neighbor Discovery",
+          "title": "RFC 4861 — Neighbor Discovery for IPv6",
+          "url": "https://www.rfc-editor.org/rfc/rfc4861",
+          "kind": "rfc"
+        },
+        {
+          "coverage": "Beej's free network programming guide",
+          "title": "Beej's Guide to Network Programming",
+          "url": "https://beej.us/guide/bgnet/",
+          "kind": "free-docs"
+        }
+      ],
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "JCAC-OS",
+      "title": "JCAC Student Guide — Operating Systems",
+      "type": "Training",
+      "studyTopics": "Data layer",
+      "availability": "needs-user",
+      "alternatives": [
+        {
+          "coverage": "x86-64 OS internals (hands-on free course)",
+          "title": "OpenSecurityTraining2 — Architecture 2001: x86-64 OS Internals",
+          "url": "https://beta.ost2.fyi/courses/course-v1:OpenSecurityTraining2+Arch2001_x86-64_OS_Internals+2022_v1_jc/about",
+          "kind": "free-course"
+        },
+        {
+          "coverage": "MIT OCW — Operating System Engineering",
+          "title": "MIT 6.828 / 6.S081 Operating System Engineering (OCW)",
+          "url": "https://pdos.csail.mit.edu/6.828/",
+          "kind": "free-course"
+        },
+        {
+          "coverage": "Free OS textbook",
+          "title": "Remzi Arpaci-Dusseau — Operating Systems: Three Easy Pieces (free)",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "Also on this Bib as BOOK-OS-CONCEPTS",
+          "title": "Silberschatz — Operating System Concepts",
+          "url": "#references/BOOK-OS-CONCEPTS",
+          "kind": "cross-ref"
+        }
+      ],
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "JCAC-PROG-FUND",
+      "title": "JCAC Student Guide — Programming Fundamentals",
+      "type": "Training",
+      "studyTopics": "Data structures",
+      "availability": "needs-user",
+      "alternatives": [
+        {
+          "coverage": "Harvard CS50 — Introduction to Computer Science (free)",
+          "title": "Harvard CS50x on edX",
+          "url": "https://cs50.harvard.edu/x/",
+          "kind": "free-course"
+        },
+        {
+          "coverage": "MIT OCW — Introduction to Computer Science and Programming",
+          "title": "MIT 6.0001 — Intro to CS and Programming in Python (OCW)",
+          "url": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/",
+          "kind": "free-course"
+        },
+        {
+          "coverage": "Structure and Interpretation of Computer Programs (free)",
+          "title": "SICP — full text online",
+          "url": "https://sarabander.github.io/sicp/",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "Data structures fundamentals",
+          "title": "Princeton — Algorithms (free Coursera)",
+          "url": "https://www.coursera.org/learn/algorithms-part1",
+          "kind": "free-course"
+        }
+      ],
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "JCAC-PROG-SCRIPT",
+      "title": "JCAC Student Guide — Programming/Scripting",
+      "type": "Training",
+      "studyTopics": "Regular expressions",
+      "availability": "needs-user",
+      "alternatives": [
+        {
+          "coverage": "Python tutorial (authoritative)",
+          "title": "Python Official Tutorial",
+          "url": "https://docs.python.org/3/tutorial/",
+          "kind": "free-docs"
+        },
+        {
+          "coverage": "Also on this Bib — Python for admin scripting",
+          "title": "Automate the Boring Stuff with Python (on Bib)",
+          "url": "#references/BOOK-AUTOMATE-PY",
+          "kind": "cross-ref"
+        },
+        {
+          "coverage": "Bash scripting guide",
+          "title": "Advanced Bash-Scripting Guide (TLDP, free)",
+          "url": "https://tldp.org/LDP/abs/html/",
+          "kind": "free-docs"
+        },
+        {
+          "coverage": "POSIX regex reference (JCAC study topic)",
+          "title": "POSIX regex specification",
+          "url": "https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.html",
+          "kind": "free-docs"
+        }
+      ],
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "JCAC-PROTOCOL-ANALYSIS",
+      "title": "JCAC Student Guide — Protocol Analysis",
+      "type": "Training",
+      "studyTopics": "ICMP header (IPv4); network-layer protocol headers; SNMP; transport-layer protocol headers",
+      "availability": "needs-user",
+      "alternatives": [
+        {
+          "coverage": "Wireshark University free content",
+          "title": "Wireshark — Documentation and Sample Captures",
+          "url": "https://www.wireshark.org/docs/",
+          "kind": "free-docs"
+        },
+        {
+          "coverage": "Protocol reference — TCP/IP Guide (free online)",
+          "title": "The TCP/IP Guide — free online edition",
+          "url": "http://www.tcpipguide.com/free/",
+          "kind": "free-docs"
+        },
+        {
+          "coverage": "ICMP / IP protocol references",
+          "title": "RFC 792 — Internet Control Message Protocol",
+          "url": "https://www.rfc-editor.org/rfc/rfc792",
+          "kind": "rfc"
+        },
+        {
+          "coverage": "SNMP reference",
+          "title": "RFC 3410 — SNMP framework overview",
+          "url": "https://www.rfc-editor.org/rfc/rfc3410",
+          "kind": "rfc"
+        },
+        {
+          "coverage": "PCAP tutorials and sample captures",
+          "title": "NETRESEC — PCAP Files Repository",
+          "url": "https://www.netresec.com/?page=PcapFiles",
+          "kind": "free-docs"
+        }
+      ],
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "JCAC-UNIX-LINUX",
+      "title": "JCAC Student Guide — UNIX/Linux",
+      "type": "Training",
+      "studyTopics": "Hostname lookup; Linux fundamentals; logs/auditing; OS internals; SUID/GUID permissions; shell scripts",
+      "availability": "needs-user",
+      "alternatives": [
+        {
+          "coverage": "Free Linux textbook",
+          "title": "The Linux Command Line (Shotts) — free full text",
+          "url": "https://linuxcommand.org/tlcl.php",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "Ryan's Tutorials — hands-on intro",
+          "title": "Ryan's Tutorials — Linux",
+          "url": "https://ryanstutorials.net/linuxtutorial/",
+          "kind": "free-docs"
+        },
+        {
+          "coverage": "Linux From Scratch (deep architecture)",
+          "title": "Linux From Scratch Project",
+          "url": "https://www.linuxfromscratch.org/lfs/",
+          "kind": "free-docs"
+        },
+        {
+          "coverage": "SUID/GUID + permissions reference",
+          "title": "Linux Security Module / permissions docs",
+          "url": "https://www.kernel.org/doc/html/latest/",
+          "kind": "free-docs"
+        },
+        {
+          "coverage": "OverTheWire — hands-on Linux wargames",
+          "title": "OverTheWire — Bandit (free shell practice)",
+          "url": "https://overthewire.org/wargames/bandit/",
+          "kind": "free-course"
+        }
+      ],
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "JCAC-WINDOWS",
+      "title": "JCAC Student Guide — Windows",
+      "type": "Training",
+      "studyTopics": "Memory protection; Windows accounts; Windows architecture; Windows network protocols",
+      "availability": "needs-user",
+      "alternatives": [
+        {
+          "coverage": "Windows Internals — free authoritative docs",
+          "title": "Microsoft Learn — Windows Internals",
+          "url": "https://learn.microsoft.com/en-us/windows/win32/sysinfo/windows-internals",
+          "kind": "free-docs"
+        },
+        {
+          "coverage": "Memory protection / security mechanisms",
+          "title": "Microsoft Learn — Process Mitigation Policies (DEP, ASLR, CFG)",
+          "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/process-mitigation-policies",
+          "kind": "free-docs"
+        },
+        {
+          "coverage": "Also on this Bib as BOOK-WIN-INTERNALS-1 / 2",
+          "title": "Windows Internals Part 1 and Part 2 (on Bib)",
+          "url": "#references/BOOK-WIN-INTERNALS-1",
+          "kind": "cross-ref"
+        },
+        {
+          "coverage": "Sysinternals toolkit (deep Windows diagnostics)",
+          "title": "Sysinternals — Process Explorer, Autoruns, etc.",
+          "url": "https://learn.microsoft.com/en-us/sysinternals/",
+          "kind": "free-tool"
+        },
+        {
+          "coverage": "Windows networking protocols reference",
+          "title": "Microsoft — Windows Networking protocol docs",
+          "url": "https://learn.microsoft.com/en-us/windows/win32/winsock/",
+          "kind": "free-docs"
+        }
+      ],
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "JP-2-01",
+      "title": "JP 2-01 — Joint and National Intelligence Support to Military Operations",
+      "type": "JP",
+      "studyTopics": "Chapter II; Executive Summary",
+      "availability": "public-downloaded",
+      "sourceUrl": "https://irp.fas.org/doddir/dod/jp2_01.pdf",
+      "alternatives": [
+        {
+          "coverage": "Full PDF (FAS mirror)",
+          "title": "JP 2-01 — Joint and National Intelligence Support to Military Operations",
+          "url": "https://irp.fas.org/doddir/dod/jp2_01.pdf",
+          "kind": "free-pdf-mirror",
+          "note": "Federation of American Scientists maintains a public mirror of unrestricted joint doctrine. Download in browser (CDN blocks automated tools)."
+        },
+        {
+          "coverage": "Official landing page",
+          "title": "JCS — Joint Doctrine Library",
+          "url": "https://www.jcs.mil/doctrine/",
+          "kind": "free-docs"
+        },
+        {
+          "coverage": "Naval Postgraduate School mirror",
+          "title": "NPS — Joint Publications Archive",
+          "url": "https://edocs.nps.edu/dodpubs/topic/jointpubs/",
+          "kind": "free-docs"
+        }
+      ],
+      "localPath": "references/JP-2-01 Joint and National Intelligence Support.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "JP-3-0",
+      "title": "JP 3-0 — Joint Campaigns and Operations",
+      "type": "JP",
+      "studyTopics": "Chapter VII",
+      "availability": "public-downloaded",
+      "sourceUrl": "https://irp.fas.org/doddir/dod/jp3_0.pdf",
+      "alternatives": [
+        {
+          "coverage": "Full PDF (FAS mirror)",
+          "title": "JP 3-0 — Joint Campaigns and Operations",
+          "url": "https://irp.fas.org/doddir/dod/jp3_0.pdf",
+          "kind": "free-pdf-mirror"
+        },
+        {
+          "coverage": "JCS doctrine series page",
+          "title": "JCS Joint Doctrine Pubs — 3-0 Operations Series",
+          "url": "https://www.jcs.mil/doctrine/joint-doctrine-pubs/3-0-operations-series/",
+          "kind": "free-docs"
+        },
+        {
+          "coverage": "Army War College guide summarizing JP 3-0",
+          "title": "US Army War College — Campaign Planning Primer",
+          "url": "https://publications.armywarcollege.edu/",
+          "kind": "free-docs"
+        }
+      ],
+      "localPath": "references/JP-3-0 Joint Campaigns and Operations.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "JP-3-09",
+      "title": "JP 3-09 — Joint Fire Support",
+      "type": "JP",
+      "studyTopics": "Chapter 3; Glossary",
+      "availability": "public-downloaded",
+      "sourceUrl": "https://irp.fas.org/doddir/dod/jp3_09.pdf",
+      "alternatives": [
+        {
+          "coverage": "Full PDF (FAS mirror)",
+          "title": "JP 3-09 — Joint Fire Support",
+          "url": "https://irp.fas.org/doddir/dod/jp3_09.pdf",
+          "kind": "free-pdf-mirror"
+        },
+        {
+          "coverage": "JCS landing page",
+          "title": "JCS Doctrine Library",
+          "url": "https://www.jcs.mil/doctrine/",
+          "kind": "free-docs"
+        }
+      ],
+      "localPath": "references/JP-3-09 Joint Fire Support.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "JP-3-12",
+      "title": "JP 3-12 — Joint Cyberspace Operations",
+      "type": "JP",
+      "studyTopics": "Chapters I, II, III, IV",
+      "availability": "public-downloaded",
+      "sourceUrl": "https://irp.fas.org/doddir/dod/jp3_12.pdf",
+      "alternatives": [
+        {
+          "coverage": "Full PDF — 2018 public edition (FAS mirror)",
+          "title": "JP 3-12 — Joint Cyberspace Operations (2018)",
+          "url": "https://irp.fas.org/doddir/dod/jp3_12.pdf",
+          "kind": "free-pdf-mirror",
+          "note": "The 2018 edition was publicly released; the 2022 edition is CAC-restricted. FAS preserves the public version."
+        },
+        {
+          "coverage": "Analysis and context",
+          "title": "National Security Archive — Cyber Brief: JP 3-12",
+          "url": "https://nsarchive.gwu.edu/news/cybervault/2018-06-27/cyber-brief-joint-publication-3-12",
+          "kind": "free-analysis"
+        },
+        {
+          "coverage": "Air Force parallel doctrine",
+          "title": "AFDP 3-12 — Air Force Doctrine Publication: Cyberspace Operations",
+          "url": "https://www.doctrine.af.mil/Portals/61/documents/AFDP_3-12/3-12-AFDP-CYBERSPACE-OPS.pdf",
+          "kind": "free-pdf",
+          "note": "AFDP 3-12 mirrors JP 3-12's framework with Air Force-specific implementation. Publicly available, current."
+        },
+        {
+          "coverage": "NATO equivalent doctrine",
+          "title": "NATO AJP-3.20 — Allied Joint Doctrine for Cyberspace Operations",
+          "url": "https://assets.publishing.service.gov.uk/media/5f086ec4d3bf7f2bef137675/doctrine_nato_cyberspace_operations_ajp_3_20_1_.pdf",
+          "kind": "free-pdf",
+          "note": "Hosted via UK MoD — publicly available allied doctrine. Useful for cross-referencing definitions."
+        },
+        {
+          "coverage": "Public Intelligence archive",
+          "title": "Public Intelligence — JP 3-12 mirror",
+          "url": "https://publicintelligence.net/jcs-cyberspace-operations/",
+          "kind": "free-pdf-mirror"
+        },
+        {
+          "coverage": "Army War College strategic summary",
+          "title": "US Army War College — Strategic Cyberspace Operations Guide",
+          "url": "https://media.defense.gov/2023/Oct/02/2003312499/-1/-1/0/STRATEGIC_CYBERSPACE_OPERATIONS_GUIDE.PDF",
+          "kind": "free-pdf"
+        }
+      ],
+      "localPath": "references/JP-3-12 Joint Cyberspace Operations.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "JP-3-13",
+      "title": "JP 3-13 — Information Operations",
+      "type": "JP",
+      "studyTopics": "Chapters II, IV",
+      "availability": "public-downloaded",
+      "sourceUrl": "https://irp.fas.org/doddir/dod/jp3_13.pdf",
+      "alternatives": [
+        {
+          "coverage": "Full PDF (FAS mirror)",
+          "title": "JP 3-13 — Information Operations",
+          "url": "https://irp.fas.org/doddir/dod/jp3_13.pdf",
+          "kind": "free-pdf-mirror"
+        },
+        {
+          "coverage": "JCS landing page",
+          "title": "JCS Joint Doctrine Library",
+          "url": "https://www.jcs.mil/doctrine/",
+          "kind": "free-docs"
+        },
+        {
+          "coverage": "NATO equivalent (strategic communications / IO)",
+          "title": "NATO AJP-10 — Strategic Communications (public version if released)",
+          "url": "https://www.nato.int/cps/en/natohq/official_texts.htm",
+          "kind": "free-docs"
+        }
+      ],
+      "localPath": "references/JP-3-13 Information Operations.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "JP-3-25",
+      "title": "JP 3-25 — Joint Countering Threat Networks",
+      "type": "JP",
+      "studyTopics": "Chapter 3",
+      "availability": "public-downloaded",
+      "sourceUrl": "https://irp.fas.org/doddir/dod/jp3_25.pdf",
+      "alternatives": [
+        {
+          "coverage": "Full PDF (FAS mirror)",
+          "title": "JP 3-25 — Countering Threat Networks",
+          "url": "https://irp.fas.org/doddir/dod/jp3_25.pdf",
+          "kind": "free-pdf-mirror"
+        },
+        {
+          "coverage": "JCS doctrine library",
+          "title": "JCS Joint Doctrine Library",
+          "url": "https://www.jcs.mil/doctrine/",
+          "kind": "free-docs"
+        }
+      ],
+      "localPath": "references/JP-3-25 Countering Threat Networks.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "JP-3-60",
+      "title": "JP 3-60 — Joint Targeting",
+      "type": "JP",
+      "studyTopics": "Chapters I, II; Executive Summary",
+      "availability": "public-downloaded",
+      "sourceUrl": "https://irp.fas.org/doddir/dod/jp3_60.pdf",
+      "alternatives": [
+        {
+          "coverage": "Full PDF (FAS mirror)",
+          "title": "JP 3-60 — Joint Targeting",
+          "url": "https://irp.fas.org/doddir/dod/jp3_60.pdf",
+          "kind": "free-pdf-mirror"
+        },
+        {
+          "coverage": "JCS landing",
+          "title": "JCS Joint Doctrine Library",
+          "url": "https://www.jcs.mil/doctrine/",
+          "kind": "free-docs"
+        }
+      ],
+      "localPath": "references/JP-3-60 Joint Targeting.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "JP-5-0",
+      "title": "JP 5-0 — Joint Planning",
+      "type": "JP",
+      "studyTopics": "Chapters I, II, IV; Executive Summary",
+      "availability": "public-downloaded",
+      "sourceUrl": "https://irp.fas.org/doddir/dod/jp5_0.pdf",
+      "alternatives": [
+        {
+          "coverage": "Full PDF (FAS mirror)",
+          "title": "JP 5-0 — Joint Planning",
+          "url": "https://irp.fas.org/doddir/dod/jp5_0.pdf",
+          "kind": "free-pdf-mirror"
+        },
+        {
+          "coverage": "Naval Postgraduate School mirror",
+          "title": "NPS — JP 5-0 archive",
+          "url": "https://edocs.nps.edu/dodpubs/topic/jointpubs/JP5/",
+          "kind": "free-docs"
+        },
+        {
+          "coverage": "Army War College planning primer",
+          "title": "US Army War College — Campaign Planning Primer",
+          "url": "https://publications.armywarcollege.edu/",
+          "kind": "free-docs"
+        }
+      ],
+      "localPath": "references/JP-5-0 Joint Planning.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "SECNAVINST-5510.30C",
+      "title": "SECNAVINST 5510.30C — Department of the Navy Personnel Security Program (U)",
+      "type": "SECNAVINST",
+      "studyTopics": "Chapter 1",
+      "availability": "public-downloaded",
+      "sourceUrl": "https://www.secnav.navy.mil/doni/",
+      "alternatives": [
+        {
+          "coverage": "DoN Issuances (DoNI) — official host",
+          "title": "DoNI — SECNAVINST 5510.30 Series",
+          "url": "https://www.secnav.navy.mil/doni/",
+          "kind": "free-docs",
+          "note": "Direct link varies by revision letter; search DoNI for '5510.30' and pick the current letter."
+        },
+        {
+          "coverage": "Equivalent DoD-wide personnel security",
+          "title": "DoDM 5200.02 — Procedures for the DoD Personnel Security Program",
+          "url": "https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodm/520002_dodm.pdf",
+          "kind": "free-pdf",
+          "note": "DoDM 5200.02 is the DoD-wide personnel security manual that SECNAVINST 5510.30 implements for the Navy."
+        },
+        {
+          "coverage": "EO 12968 — baseline access to classified info",
+          "title": "EO 12968 — Access to Classified Information",
+          "url": "https://www.archives.gov/files/isoo/policy-documents/eo-12968.pdf",
+          "kind": "free-pdf"
+        }
+      ],
+      "localPath": "references/SECNAV-M-5510.30 DON Personnel Security Program Manual.pdf",
+      "note": "Local file is the full SECNAV M-5510.30 manual (2006). The manual was officially canceled and subsumed by SECNAVINST 5510.30C (24 Jan 2020); content still defines the DON Personnel Security Program policy framework. Bib's 'Chapter 1' study scope lives in this manual.",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "SECNAVINST-5510.36B",
+      "title": "SECNAVINST 5510.36B — Department of the Navy Information Security Program",
+      "type": "SECNAVINST",
+      "studyTopics": "Chapter 2",
+      "availability": "public-downloaded",
+      "sourceUrl": "https://www.secnav.navy.mil/doni/Directives/05000%20General%20Management%20Security%20and%20Safety%20Services/05-500%20Security%20Services/5510.36B.pdf",
+      "alternatives": [
+        {
+          "coverage": "SECNAVINST 5510.36A archived (older instruction, same policy framework)",
+          "title": "SECNAVINST 5510.36A — FAS mirror",
+          "url": "https://irp.fas.org/doddir/navy/secnavinst/5510_36a.pdf",
+          "kind": "free-pdf-mirror"
+        },
+        {
+          "coverage": "Manual — alternate mirror (EverySpec)",
+          "title": "SECNAV M-5510.36 — EverySpec mirror",
+          "url": "https://everyspec.com/USN/SECNAV/SECNAV_M-5510x36_2006_4718/",
+          "kind": "free-pdf-mirror"
+        },
+        {
+          "coverage": "The MANUAL the Bib actually tests from (Chapter 2 content lives here)",
+          "title": "SECNAV M-5510.36 — DON Information Security Program Manual",
+          "url": "https://www.usna.edu/AcResearch/_files/documents/5510.36.pdf",
+          "kind": "free-pdf",
+          "note": "USNA hosted mirror. 300+ page implementation manual that SECNAVINST 5510.36B references. This is where Chapter 2 is."
+        },
+        {
+          "coverage": "DoNI — official host",
+          "title": "DoNI — SECNAVINST 5510.36 Series",
+          "url": "https://www.secnav.navy.mil/doni/",
+          "kind": "free-docs"
+        },
+        {
+          "coverage": "DoD-wide info security (parent instruction)",
+          "title": "DoDM 5200.01 Vol 1–4 — DoD Information Security Program",
+          "url": "https://www.esd.whs.mil/Directives/issuances/dodm/",
+          "kind": "free-docs",
+          "note": "DoDM 5200.01 is the DoD-wide info security manual that SECNAVINST 5510.36 implements for the Navy."
+        },
+        {
+          "coverage": "Executive Order (legal basis)",
+          "title": "EO 13526 — Classified National Security Information",
+          "url": "https://www.archives.gov/isoo/policy-documents/cnsi-eo.html",
+          "kind": "free-docs",
+          "note": "Defines the three classification levels (Confidential, Secret, Top Secret) and the damage tests the Bib will test on."
+        }
+      ],
+      "note": "Local file is the 300+ page SECNAV M-5510.36 MANUAL (the document with Chapter 2). SECNAVINST 5510.36B is the short instruction that references this manual.",
+      "localPath": "references/SECNAV M-5510.36 DON Information Security Program Manual.pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    },
+    {
+      "id": "USSID-18",
+      "title": "USSID 18 — Protection of Civil Liberties and Privacy of U.S. Person Information When Conducting SIGINT Missions",
+      "type": "USSID",
+      "studyTopics": "Section 4",
+      "availability": "public-downloaded",
+      "note": "Local file is the NSA-released redacted public version. Section 4 (the Bib's study scope) is substantively intact. Full classified version is accessible only through official channels.",
+      "alternatives": [
+        {
+          "coverage": "Declassified redacted version — NSA official public release",
+          "title": "USSID 18 (Redacted) — NSA official release after Snowden disclosures",
+          "url": "https://www.nsa.gov/portals/75/documents/news-features/press-room/statements/Snowden-USSID-18-Redacted.pdf",
+          "kind": "free-pdf",
+          "note": "NSA publicly released a redacted version after FOIA pressure. Covers Section 4 (the Bib's study scope) substantively. This IS the source you study from — the classified version is just this plus the redacted parts."
+        },
+        {
+          "coverage": "EFF archive (same declassified doc)",
+          "title": "USSID SP0018 — EFF archive (Jan 25 2011 edition)",
+          "url": "https://www.eff.org/files/2013/11/21/20131119-odni-united_states_signals_intelligence_directive_18_jan_25_2011.pdf",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "ACLU archive (earlier 1993 edition)",
+          "title": "USSID 18 — ACLU archive (1993 version, NSA Release Nov 2013)",
+          "url": "https://www.aclu.org/sites/default/files/field_document/1993-07-27_USSID-18_NSA-Release-November-2013.pdf",
+          "kind": "free-pdf"
+        },
+        {
+          "coverage": "Academic analysis of USSID 18",
+          "title": "NSA Civil Liberties and Privacy Office — Review of Minimization Procedures",
+          "url": "https://media.defense.gov/2021/Aug/18/2002833866/-1/-1/0/20171011-NSA-CLPO-DISSEMINATION-REPORT.PDF",
+          "kind": "free-pdf",
+          "note": "Official NSA CLPO review of minimization procedures under USSID 18. Helpful context for exam questions on US-person protections."
+        }
+      ],
+      "localPath": "references/USSID-18 Protection of US Person Information (redacted).pdf",
+      "coreIncluded": true,
+      "sourceBibId": "CWT-E7"
+    }
+  ],
+  "sections": [
+    {
+      "id": "offensive-cyber-ops",
+      "name": "Offensive Cyber Operations",
+      "code": "OCO",
+      "weightSource": "core-reference-only",
+      "weightNote": "Initial value taken from the operator's CWT E-6 example (2026-05-13). Replace with the actual CWT-E7 Cycle 270 profile-sheet item count via Manage > Profile sheet.",
+      "aliases": [
+        "Offensive",
+        "OCO",
+        "Attack"
+      ],
+      "objectiveIds": [
+        "obj-oco-recon-enum",
+        "obj-oco-system-hacking",
+        "obj-oco-attack-techniques",
+        "obj-oco-offensive-tradecraft"
+      ],
+      "topicTags": [
+        "offensive-cyber-ops",
+        "exploitation",
+        "attack-techniques",
+        "persistence",
+        "red-team",
+        "post-exploitation",
+        "lateral-movement",
+        "privilege-escalation",
+        "credential-access"
+      ]
+    },
+    {
+      "id": "system-fundamentals",
+      "name": "System Fundamentals and Evaluations",
+      "code": "SYS",
+      "weightSource": "core-reference-only",
+      "weightNote": "Initial value taken from the operator's CWT E-6 example. Replace via Manage > Profile sheet.",
+      "aliases": [
+        "Systems",
+        "Sys Fund",
+        "System Fundamentals"
+      ],
+      "objectiveIds": [
+        "obj-sys-architecture",
+        "obj-sys-os-internals",
+        "obj-sys-networking",
+        "obj-sys-protocol-analysis",
+        "obj-sys-programming",
+        "obj-sys-admin-cli"
+      ],
+      "topicTags": [
+        "operating-systems",
+        "networking",
+        "protocols",
+        "tcp-ip",
+        "ipv6",
+        "programming",
+        "scripting",
+        "x86",
+        "registers",
+        "architecture",
+        "hardware",
+        "kernel",
+        "memory",
+        "filesystems",
+        "windows",
+        "linux",
+        "unix"
+      ]
+    },
+    {
+      "id": "defensive-cyber-ops",
+      "name": "Defensive Cyber Operations",
+      "code": "DCO",
+      "weightSource": "core-reference-only",
+      "weightNote": "Initial value taken from the operator's CWT E-6 example. Replace via Manage > Profile sheet.",
+      "aliases": [
+        "Defense",
+        "DCO",
+        "Defensive"
+      ],
+      "objectiveIds": [
+        "obj-dco-memory-forensics",
+        "obj-dco-network-intrusion",
+        "obj-dco-incident-handling"
+      ],
+      "topicTags": [
+        "defensive-cyber-ops",
+        "incident-handling",
+        "incident-response",
+        "ids",
+        "ips",
+        "firewall",
+        "blue-team",
+        "malware-analysis",
+        "memory-forensics",
+        "forensic-methodology",
+        "cnd",
+        "defense-in-depth",
+        "snort",
+        "tcpdump"
+      ]
+    },
+    {
+      "id": "research-development",
+      "name": "Research and Development",
+      "code": "R&D",
+      "weightSource": "core-reference-only",
+      "weightNote": "Initial value taken from the operator's CWT E-6 example. Replace via Manage > Profile sheet.",
+      "aliases": [
+        "R&D",
+        "Research",
+        "Development"
+      ],
+      "objectiveIds": [
+        "obj-rnd-reverse-engineering",
+        "obj-rnd-vuln-research"
+      ],
+      "topicTags": [
+        "reverse-engineering",
+        "vulnerability-research",
+        "fuzzing",
+        "exploit-development",
+        "code-analysis",
+        "binary-analysis",
+        "static-analysis",
+        "dynamic-analysis"
+      ]
+    },
+    {
+      "id": "cyber-planning",
+      "name": "Cyber Planning",
+      "code": "PLAN",
+      "weightSource": "core-reference-only",
+      "weightNote": "Initial value taken from the operator's CWT E-6 example. Replace via Manage > Profile sheet.",
+      "aliases": [
+        "Planning",
+        "Cyber Plans"
+      ],
+      "objectiveIds": [
+        "obj-plan-joint-cyber-doctrine",
+        "obj-plan-joint-planning",
+        "obj-plan-targeting",
+        "obj-plan-fires-cnt",
+        "obj-plan-intel-support",
+        "obj-plan-roe"
+      ],
+      "topicTags": [
+        "joint-doctrine",
+        "naval-doctrine",
+        "planning-process",
+        "joint-planning",
+        "naval-planning",
+        "targeting",
+        "information-operations",
+        "io",
+        "cyberspace-ops",
+        "layers",
+        "joint-operations",
+        "joint-fires"
+      ]
+    },
+    {
+      "id": "security-administration",
+      "name": "Security and Administration",
+      "code": "SEC",
+      "weightSource": "core-reference-only",
+      "weightNote": "Initial value taken from the operator's CWT E-6 example. Replace via Manage > Profile sheet.",
+      "aliases": [
+        "Security",
+        "Admin",
+        "S&A"
+      ],
+      "objectiveIds": [
+        "obj-sec-info-security",
+        "obj-sec-personnel-security",
+        "obj-sec-sci-admin",
+        "obj-sec-sigint-compliance",
+        "obj-sec-cert-fundamentals"
+      ],
+      "topicTags": [
+        "personnel-security",
+        "info-security",
+        "information-security",
+        "classification",
+        "sci",
+        "civil-liberties",
+        "us-persons",
+        "sigint-compliance",
+        "opsec",
+        "intelligence-oversight",
+        "security-training",
+        "compliance"
+      ]
+    }
+  ],
+  "objectives": [
+    {
+      "id": "obj-oco-recon-enum",
+      "name": "Reconnaissance and enumeration",
+      "sectionId": "offensive-cyber-ops",
+      "depth": "advanced",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "BOOK-GOOGLE-HACKING",
+        "BOOK-HACKER-TECH",
+        "JCAC-ACTIVE-EXPLOIT"
+      ],
+      "topicTags": [
+        "enumeration",
+        "recon",
+        "nmap",
+        "target-development"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-oco-system-hacking",
+      "name": "System hacking: privilege escalation + credential access",
+      "sectionId": "offensive-cyber-ops",
+      "depth": "advanced",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "BOOK-CEH",
+        "BOOK-GRAY-HAT",
+        "BOOK-HACKER-TECH"
+      ],
+      "topicTags": [
+        "system-hacking",
+        "privilege-escalation",
+        "credential-access",
+        "lateral-movement"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-oco-attack-techniques",
+      "name": "Attack techniques + post-exploitation",
+      "sectionId": "offensive-cyber-ops",
+      "depth": "advanced",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "BOOK-CYBER-OPS",
+        "BOOK-GRAY-HAT",
+        "BOOK-RTFM"
+      ],
+      "topicTags": [
+        "attack-techniques",
+        "post-exploitation",
+        "command-and-control"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-oco-offensive-tradecraft",
+      "name": "Offensive tradecraft + persistence",
+      "sectionId": "offensive-cyber-ops",
+      "depth": "chief",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "BOOK-ADV-TRADECRAFT",
+        "BOOK-RTFM"
+      ],
+      "topicTags": [
+        "persistence",
+        "tradecraft",
+        "evasion"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-sys-architecture",
+      "name": "Hardware architecture + registers + assembly",
+      "sectionId": "system-fundamentals",
+      "depth": "advanced",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "BOOK-ASM-PROG",
+        "BOOK-ARCH-COMP-HW",
+        "JCAC-COMP-ORG-ARCH"
+      ],
+      "topicTags": [
+        "architecture",
+        "registers",
+        "x86",
+        "assembly",
+        "hardware"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-sys-os-internals",
+      "name": "Operating system internals (Windows + Linux)",
+      "sectionId": "system-fundamentals",
+      "depth": "advanced",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "BOOK-OS-CONCEPTS",
+        "BOOK-WIN-INTERNALS-1",
+        "BOOK-WIN-INTERNALS-2",
+        "JCAC-WINDOWS",
+        "JCAC-UNIX-LINUX",
+        "JCAC-OS"
+      ],
+      "topicTags": [
+        "operating-systems",
+        "windows",
+        "linux",
+        "unix",
+        "kernel",
+        "memory",
+        "filesystems"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-sys-networking",
+      "name": "Networking fundamentals + TCP/IP",
+      "sectionId": "system-fundamentals",
+      "depth": "advanced",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "BOOK-CCNA",
+        "BOOK-CWNA",
+        "BOOK-TCPIP-GUIDE",
+        "JCAC-NETWORKING"
+      ],
+      "topicTags": [
+        "networking",
+        "tcp-ip",
+        "ipv6",
+        "osi",
+        "wireless"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-sys-protocol-analysis",
+      "name": "Protocol analysis + packet decoding",
+      "sectionId": "system-fundamentals",
+      "depth": "advanced",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "JCAC-PROTOCOL-ANALYSIS",
+        "BOOK-TCPIP-GUIDE"
+      ],
+      "topicTags": [
+        "protocols",
+        "icmp",
+        "snmp",
+        "dns",
+        "ssl",
+        "tls"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-sys-programming",
+      "name": "Programming + scripting + data structures",
+      "sectionId": "system-fundamentals",
+      "depth": "advanced",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "BOOK-CPP-HTP",
+        "BOOK-AUTO-BORING-PY",
+        "JCAC-PROG-FUND",
+        "JCAC-PROG-SCRIPT"
+      ],
+      "topicTags": [
+        "programming",
+        "scripting",
+        "python",
+        "c++",
+        "data-structures",
+        "regex"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-sys-admin-cli",
+      "name": "Command-line + system administration",
+      "sectionId": "system-fundamentals",
+      "depth": "intermediate",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "BOOK-WIN-CLI-PC"
+      ],
+      "topicTags": [
+        "command-line",
+        "admin",
+        "shell"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-dco-memory-forensics",
+      "name": "Memory forensics + malware in memory",
+      "sectionId": "defensive-cyber-ops",
+      "depth": "advanced",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "BOOK-ART-MEM-FORENSICS",
+        "BOOK-PRACTICAL-MEM",
+        "JCAC-FORENSIC-MAL"
+      ],
+      "topicTags": [
+        "memory-forensics",
+        "malware-analysis",
+        "volatility",
+        "code-injection"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-dco-network-intrusion",
+      "name": "Network intrusion detection (IDS/IPS)",
+      "sectionId": "defensive-cyber-ops",
+      "depth": "advanced",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "BOOK-NET-INTRUSION",
+        "BOOK-BTFM"
+      ],
+      "topicTags": [
+        "ids",
+        "ips",
+        "snort",
+        "tcpdump",
+        "stimulus-response"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-dco-incident-handling",
+      "name": "Incident handling lifecycle",
+      "sectionId": "defensive-cyber-ops",
+      "depth": "chief",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "CJCSI-6510.01F",
+        "CJCSM-6510.01B"
+      ],
+      "topicTags": [
+        "incident-handling",
+        "incident-response",
+        "cnd",
+        "defense-in-depth"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-rnd-reverse-engineering",
+      "name": "Reverse engineering process",
+      "sectionId": "research-development",
+      "depth": "chief",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "BOOK-REVERSE-ENG"
+      ],
+      "topicTags": [
+        "reverse-engineering",
+        "static-analysis",
+        "dynamic-analysis"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-rnd-vuln-research",
+      "name": "Vulnerability research + fuzzing",
+      "sectionId": "research-development",
+      "depth": "chief",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "BOOK-GRAY-HAT"
+      ],
+      "topicTags": [
+        "vulnerability-research",
+        "fuzzing",
+        "exploit-development"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-plan-joint-cyber-doctrine",
+      "name": "Joint cyber + information operations doctrine",
+      "sectionId": "cyber-planning",
+      "depth": "chief",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "JP-3-12",
+        "JP-3-13"
+      ],
+      "topicTags": [
+        "joint-doctrine",
+        "cyberspace-ops",
+        "information-operations"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-plan-joint-planning",
+      "name": "Joint planning + joint operations",
+      "sectionId": "cyber-planning",
+      "depth": "chief",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "JP-5-0",
+        "JP-3-0"
+      ],
+      "topicTags": [
+        "joint-planning",
+        "joint-operations",
+        "planning-process"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-plan-targeting",
+      "name": "Joint targeting + target development",
+      "sectionId": "cyber-planning",
+      "depth": "chief",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "JP-3-60",
+        "CJCSI-3370.01B"
+      ],
+      "topicTags": [
+        "targeting",
+        "target-development",
+        "joint-fires"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-plan-fires-cnt",
+      "name": "Joint fires + countering threat networks",
+      "sectionId": "cyber-planning",
+      "depth": "chief",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "JP-3-09",
+        "JP-3-25"
+      ],
+      "topicTags": [
+        "joint-fires",
+        "counter-threat-networks"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-plan-intel-support",
+      "name": "Intelligence support to operations",
+      "sectionId": "cyber-planning",
+      "depth": "chief",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "JP-2-01"
+      ],
+      "topicTags": [
+        "intelligence-support",
+        "j2"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-plan-roe",
+      "name": "ROE + Standing Rules for the Use of Force",
+      "sectionId": "cyber-planning",
+      "depth": "chief",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "CJCSI-3121.01B"
+      ],
+      "topicTags": [
+        "roe",
+        "sroe",
+        "rules-of-force"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-sec-info-security",
+      "name": "DoN Information Security Program",
+      "sectionId": "security-administration",
+      "depth": "chief",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "SECNAVINST-5510.36B",
+        "DJSIG"
+      ],
+      "topicTags": [
+        "info-security",
+        "classification",
+        "compliance"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-sec-personnel-security",
+      "name": "DoN Personnel Security Program",
+      "sectionId": "security-administration",
+      "depth": "chief",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "SECNAVINST-5510.30C"
+      ],
+      "topicTags": [
+        "personnel-security",
+        "investigations"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-sec-sci-admin",
+      "name": "SCI administrative security",
+      "sectionId": "security-administration",
+      "depth": "chief",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "DODM-5105.21-V1"
+      ],
+      "topicTags": [
+        "sci",
+        "compartmented",
+        "admin"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-sec-sigint-compliance",
+      "name": "SIGINT compliance + US-person protections",
+      "sectionId": "security-administration",
+      "depth": "chief",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "USSID-18"
+      ],
+      "topicTags": [
+        "sigint-compliance",
+        "us-persons",
+        "civil-liberties"
+      ],
+      "sourceExamRelevance": "regular"
+    },
+    {
+      "id": "obj-sec-cert-fundamentals",
+      "name": "Security certification fundamentals (CISSP / Security+)",
+      "sectionId": "security-administration",
+      "depth": "intermediate",
+      "examRelevance": "core",
+      "publicSafe": true,
+      "coreObjective": true,
+      "sourceRefs": [
+        "BOOK-CISSP",
+        "BOOK-SEC-PLUS-401",
+        "BOOK-SEC-PLUS-601",
+        "BOOK-CEH"
+      ],
+      "topicTags": [
+        "security-fundamentals",
+        "cissp",
+        "security-plus"
+      ],
+      "sourceExamRelevance": "regular"
+    }
+  ]
+}
