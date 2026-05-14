@@ -12,7 +12,7 @@
   "contentBasePath": "data/bibs/CWT-E7/",
   "generatedFrom": {
     "bibId": "CWT-CORE",
-    "generatedAt": "2026-05-13T23:00:57.113Z",
+    "generatedAt": "2026-05-14T00:40:08.672Z",
     "rule": "public-safe CWT Core refs/objectives/questions; no substitute-only or local-private content"
   },
   "note": "Core-derived CWT E-5 regular-exam track. Uses the public-safe CWT Core bank; section weights remain unset until the operator enters profile-sheet values.",

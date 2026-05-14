@@ -27,6 +27,7 @@ import process from "node:process";
 
 const ROOT = process.cwd();
 const args = parseArgs(process.argv.slice(2));
+const PUBLIC_SOURCE_EXPORT = existsSync(path.join(ROOT, "GITHUB-UPLOAD-MANIFEST.json"));
 
 const findings = { errors: [], warnings: [], info: [] };
 const summary = { bibs: 0, refs: 0, questions: 0, guides: 0 };
@@ -42,6 +43,11 @@ const KNOWN_AVAILABILITY = new Set([
 ]);
 
 async function main() {
+  if (PUBLIC_SOURCE_EXPORT) {
+    info("public-source-export",
+      "GITHUB-UPLOAD-MANIFEST.json detected; local reference PDFs are expected to be absent and are audited as informational only");
+  }
+
   const indexPath = path.join(ROOT, "data", "bibs", "index.json");
   if (!existsSync(indexPath)) {
     error("no-bib-index", `data/bibs/index.json not found`, { indexPath });
@@ -199,6 +205,7 @@ async function auditBibJson(bibId, bib, bibDir) {
   }
   summary.refs += bib.references.length;
   const seen = new Set();
+  let publicExportMissingLocalPaths = 0;
   for (const ref of bib.references) {
     if (!ref.id) {
       error("ref-missing-id", `${bibId}: reference entry missing "id"`, { ref });
@@ -223,12 +230,20 @@ async function auditBibJson(bibId, bib, bibDir) {
       } else {
         const abs = path.join(bibDir, ref.localPath.replace(/\//g, path.sep));
         if (!existsSync(abs)) {
-          warn("ref-localpath-missing",
-            `${bibId}/${ref.id}: localPath does not exist on disk: ${ref.localPath}`,
-            { localPath: ref.localPath });
+          if (PUBLIC_SOURCE_EXPORT) {
+            publicExportMissingLocalPaths++;
+          } else {
+            warn("ref-localpath-missing",
+              `${bibId}/${ref.id}: localPath does not exist on disk: ${ref.localPath}`,
+              { localPath: ref.localPath });
+          }
         }
       }
     }
+  }
+  if (publicExportMissingLocalPaths) {
+    info("ref-localpath-excluded",
+      `${bibId}: ${publicExportMissingLocalPaths} local reference file(s) intentionally absent from public source export`);
   }
 }
 
@@ -659,6 +674,9 @@ async function auditStudyGuideAssets(bibId, bib, bibDir, opts = {}) {
           stats.localDocLinksChecked++;
           if (!existsSync(onDisk)) {
             stats.localLinksMissing.push({ guide: f, url, resolved: local });
+            if (PUBLIC_SOURCE_EXPORT && local.includes("/references/")) {
+              continue;
+            }
             warn("guide-doc-link-missing", `${bibId}/${f}: linked file not found on disk: ${local}`, { guide: f, url, resolved: local });
           }
         }

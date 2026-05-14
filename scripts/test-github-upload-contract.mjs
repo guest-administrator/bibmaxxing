@@ -9,7 +9,8 @@ import process from "node:process";
 
 const ROOT = process.cwd();
 const VERSION = JSON.parse(await readFile(path.join(ROOT, "package.json"), "utf8")).version || "0.0.0";
-const OUT = path.join(ROOT, "dist", `bibmaxxing-github-upload-${VERSION}`);
+const PUBLIC_SOURCE_EXPORT = existsSync(path.join(ROOT, "GITHUB-UPLOAD-MANIFEST.json"));
+const OUT = PUBLIC_SOURCE_EXPORT ? ROOT : path.join(ROOT, "dist", `bibmaxxing-github-upload-${VERSION}`);
 let failed = 0;
 
 function ok(condition, message) {
@@ -22,6 +23,7 @@ function ok(condition, message) {
 async function walk(dir, out = []) {
   const entries = await readdir(dir, { withFileTypes: true });
   for (const entry of entries) {
+    if (entry.name === ".git") continue;
     const p = path.join(dir, entry.name);
     if (entry.isDirectory()) await walk(p, out);
     else out.push(p);
@@ -35,7 +37,7 @@ ok(pkg.scripts?.["github:folder"] === "node scripts/build-github-upload.mjs",
 ok(existsSync(path.join(ROOT, "scripts", "build-github-upload.mjs")),
   "scripts/build-github-upload.mjs must exist");
 
-if (existsSync(path.join(ROOT, "scripts", "build-github-upload.mjs"))) {
+if (!PUBLIC_SOURCE_EXPORT && existsSync(path.join(ROOT, "scripts", "build-github-upload.mjs"))) {
   const result = spawnSync(process.execPath, [path.join(ROOT, "scripts", "build-github-upload.mjs")], {
     cwd: ROOT,
     stdio: "inherit",
@@ -50,6 +52,7 @@ if (existsSync(OUT)) {
   const rels = files.map((p) => path.relative(OUT, p).replace(/\\/g, "/"));
   const pdfs = rels.filter((p) => /\.pdf$/i.test(p));
   const distFiles = rels.filter((p) => p === "dist" || p.startsWith("dist/"));
+  const gitFiles = rels.filter((p) => p === ".git" || p.startsWith(".git/"));
   const localAgentFiles = rels.filter((p) => p.startsWith(".claude/") || p.startsWith(".superpowers/") || p.startsWith("_screenshots/"));
   const pyForkFiles = rels.filter((p) => p.startsWith("bibmaxxing-py/"));
   const referenceFiles = rels.filter((p) => p.includes("/references/") && !p.endsWith("/references/MANIFEST.json"));
@@ -65,14 +68,17 @@ if (existsSync(OUT)) {
   ok(pdfs.length === 0, `GitHub folder must not include PDFs: ${pdfs.slice(0, 5).join(", ")}`);
   ok(referenceFiles.length === 0, `GitHub folder must not include local reference files: ${referenceFiles.slice(0, 5).join(", ")}`);
   ok(distFiles.length === 0, "GitHub folder must not recursively include dist/");
+  ok(gitFiles.length === 0, "GitHub folder ZIP/manifest walk must not include .git/");
   ok(localAgentFiles.length === 0, "GitHub folder must not include local agent/session folders");
   ok(pyForkFiles.length === 0, "GitHub folder must not include bibmaxxing-py/");
 
-  const zipPath = `${OUT}.zip`;
-  ok(existsSync(zipPath), "GitHub upload ZIP must exist next to the folder");
-  if (existsSync(zipPath)) {
-    const z = await stat(zipPath);
-    ok(z.size > 0, "GitHub upload ZIP must be non-empty");
+  if (!PUBLIC_SOURCE_EXPORT) {
+    const zipPath = `${OUT}.zip`;
+    ok(existsSync(zipPath), "GitHub upload ZIP must exist next to the folder");
+    if (existsSync(zipPath)) {
+      const z = await stat(zipPath);
+      ok(z.size > 0, "GitHub upload ZIP must be non-empty");
+    }
   }
 }
 

@@ -95,11 +95,24 @@ async function copyTree(src, dest, rel = "") {
 async function walk(dir, out = []) {
   const entries = await readdir(dir, { withFileTypes: true });
   for (const entry of entries) {
+    if (SKIP_NAMES.has(entry.name)) continue;
     const p = path.join(dir, entry.name);
     if (entry.isDirectory()) await walk(p, out);
     else if (entry.isFile()) out.push(p);
   }
   return out;
+}
+
+async function cleanOutputDir() {
+  await mkdir(OUT, { recursive: true });
+  const entries = await readdir(OUT, { withFileTypes: true });
+  for (const entry of entries) {
+    // Preserve a Git worktree when the generated folder has already been
+    // pushed. Windows also refuses to remove OUT when an operator's shell is
+    // currently inside it, so clean contents instead of deleting OUT itself.
+    if (entry.name === ".git") continue;
+    await rm(path.join(OUT, entry.name), { recursive: true, force: true });
+  }
 }
 
 async function writeGitignore() {
@@ -209,9 +222,8 @@ async function zipFolder() {
 
 async function main() {
   await mkdir(DIST, { recursive: true });
-  await rm(OUT, { recursive: true, force: true });
   await rm(ZIP_PATH, { force: true });
-  await mkdir(OUT, { recursive: true });
+  await cleanOutputDir();
 
   for (const item of TOP_LEVEL) {
     const src = path.join(ROOT, item);
